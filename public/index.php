@@ -8,7 +8,7 @@ $baseDir = __DIR__ . '/..';
 require $baseDir . 'vendor/autoload.php';
 
 // Ladda konfigurationsdata
-$config = require $baseDir. '/config/config.example.php';
+$config = require $baseDir. '/config/config.php';
 
 // Normalisera url-sökvägar
 $path = function($uri) {

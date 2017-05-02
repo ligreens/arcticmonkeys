@@ -1,4 +1,4 @@
 /.idea/
 /vendor/
 /app/Database.php
-/config/config_example.php
+/config/config.php
