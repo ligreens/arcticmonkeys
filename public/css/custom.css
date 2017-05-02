@@ -1,0 +1,220 @@
+
+h1{
+  z-index:1;
+  position: absolute;
+  margin-left: 10px;
+}
+
+.main{
+  margin-top:40px;
+  margin-bottom:100px;
+
+}
+
+.alex{
+    padding-botton:20px;
+}
+
+.header{
+
+    background-image: url("../images/back2.png");
+    height: 700px;
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.dive{
+
+    background-image: url("../images/bild1.png");
+    height: 700px;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+
+
+
+.am{
+
+    background-image: url("../images/am.png");
+    height: 600px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.suck{
+
+    background-image: url("../images/suckit.png");
+    height: 600px;
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.humbug{
+
+    background-image: url("../images/humbug1.png");
+    height: 600px;
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.worst{
+
+    background-image: url("../images/worst.png");
+    height: 600px;
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.people{
+
+    background-image: url("../images/people.png");
+    height: 600px;
+
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.comment{
+    background-image: url("../images/bild2.png");
+    height: 700px;
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btn-primary {
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+}
+.btn-primary:hover{
+    background-color: darkgrey;
+}
+
+.formfield{
+    color:white;
+    margin-top:20px;
+}
+
+
+.formcomment{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+h4{
+    text-align:center;
+    color:white;
+}
+
+h5{
+
+    color:black;
+}
+
+.bordercomments{
+    padding-top:20px;
+    width:400px;
+    height:300px;
+    overflow: scroll;
+    background-color: white;
+}
+
+.footer{
+    font-style:italic;
+    text-align: center;
+    color:white;
+    background-color: black;
+    font-size: 10px;
+}
+.fieldcomment{
+    padding-bottom:5px;
+    border-bottom:1px solid lightgrey;
+    font-size:15px;
+    font-weight: bold;
+}
+.commentname{
+    font-weight: bold;
+    color:darkslateblue;
+}
+
+.comments{
+    border-bottom: 1px solid lightgrey;
+    padding-bottom:5px;
+}
+#date{
+    margin-bottom:-7px;
+}
+h2{
+    text-align:center ;
+}
+.album{
+    color:grey;
+    text-align: center;
+}
+
+.cdcover{
+    background-color: black;
+}
+.cdcov{
+    background-color: black;
+}
+.copy{
+    color:dimgrey;
+}
+hr{
+    border-top:3px solid black;
+    margin-bottom:-5px;
+}
+.menu{
+    font-weight: bold;
+    color:black;
+    padding:3px 8px 4px 8px;
+    font-size: 12px;
+}
+.menurow{
+    margin-top:-20px;
+}
+
+.menu:visited{
+    color:black;
+}
+
+.menu:hover{
+    background-color:black;
+    color:white;
+    text-decoration: none;
+}
+.menu:focus{
+    text-decoration: none;
+}
