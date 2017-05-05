@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+//require '../../public/index.php';
 class Controller {
 	/**
 	 * @var string

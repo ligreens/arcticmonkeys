@@ -1,13 +1,3 @@
-<?php
-
-namespace views\index;
-
-require '../app/Database.php';
-require '../app/Controllers/comments.php';
-require '../App/Models/Model.php';
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -18,57 +8,62 @@ require '../App/Models/Model.php';
     <title>Arctic Monkeys</title>
 
     <!-- Bootstrap -->
-    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
-    <link href="../public/css/custom.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 
 </head>
 <body id="home">
 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header" style="padding: 0;">
-        <hr >
+        <hr>
         <div class="row pull-right menurow" style="margin:3px;">
             <a href="#" class=" menu home"> HOME</a>
             <a href="#" class="menu albums"> ALBUMS</a>
             <a href="#" class=" menu fansforum ">FANS FORUM</a>
         </div>
 
-        </div>
+    </div>
 
 </header>
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dive">
 
-    <main  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main" style="padding: 0;">
+    <main class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main" style="padding: 0;">
 
         <form action="#" method="POST" name="member">
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <img src="../public/images/alex.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12 alex">
-                <?php
-               $model->get_members("SELECT `name`, `instruments`  FROM members where `name` = 'Alex Turner' ");
-                ?>
+                <img src="images/img/alex.jpg"
+                     class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12 alex">
+                <?php $member = $model->get_member_by_name("Alex Turner"); ?>
+                <?php foreach ($member as $item) { ?>
+                <h4><?=$item['name'] ?></h4>
+                <?php } ?>
+
+
 
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 matt">
-                <img src="../public/images/matt.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <img src="images/img/matt.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <?php
-              $model->get_members("SELECT `name`, `instruments`  FROM members where `name` = 'Matthew Helders' ");
+                //$model->get_members("SELECT `name`, `instruments`  FROM members where `name` = 'Matthew Helders' ");
                 ?>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <img src="../public/images/jamie.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <img src="images/img/jamie.jpg"
+                     class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <?php
-            $model->get_members("SELECT `name`, `instruments`  FROM members where `name` = 'Jamie Cook' ");
+                //$model->get_members("SELECT `name`, `instruments`  FROM members where `name` = 'Jamie Cook' ");
                 ?>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <img src="../public/images/nick.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <img src="images/img/nick.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <?php
-          $model->get_members("SELECT `name`, `instruments`  FROM members where `name` = 'Nick O\\'Malley' ");
+                //$model->get_members("SELECT `name`, `instruments`  FROM members where `name` = 'Nick O\\'Malley' ");
                 ?>
             </div>
 
@@ -85,7 +80,7 @@ require '../App/Models/Model.php';
         <div class="col-lg-6 col-md-6 ">
             <h2>AM</h2>
             <?php
-          $model->get_songs("SELECT `songs` FROM songs WHERE albums = 'AM'");
+            $model->get_songs("SELECT `songs` FROM songs WHERE albums = 'AM'");
             ?>
         </div>
     </div>
@@ -97,7 +92,7 @@ require '../App/Models/Model.php';
         <div class="col-lg-6 col-md-6">
             <h2>Suck It and See</h2>
             <?php
-          $model->get_songs("SELECT `songs` FROM songs WHERE albums = 'Suck it and see'");
+            $model->get_songs("SELECT `songs` FROM songs WHERE albums = 'Suck it and see'");
             ?>
         </div>
     </div>
@@ -121,7 +116,7 @@ require '../App/Models/Model.php';
             <div class="col-lg-6 col-md-6">
                 <h2>Favourite Worst Nightmare</h2>
                 <?php
-               $model->get_songs("SELECT `songs` FROM songs WHERE albums = 'Favourite Worst Nightmare'");
+                $model->get_songs("SELECT `songs` FROM songs WHERE albums = 'Favourite Worst Nightmare'");
                 ?>
             </div>
         </div>
@@ -133,7 +128,7 @@ require '../App/Models/Model.php';
             <div class="col-lg-6 col-md-6">
                 <h2>Whatever People Say I Am, That's What I'm Not</h2>
                 <?php
-             $model->get_songs("SELECT `songs` FROM songs WHERE albums = 'Whatever People Say I Am, That\\'s What I\\'m Not'");
+                $model->get_songs("SELECT `songs` FROM songs WHERE albums = 'Whatever People Say I Am, That\\'s What I\\'m Not'");
                 ?>
             </div>
         </div>
@@ -143,12 +138,11 @@ require '../App/Models/Model.php';
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment">
-            <?php
-            $comments->insert_comment();
-            ?>
-            <form action="#" method="POST" class="form-inline" id="fans" >
+           <?php $add_comments->insert_comment(); ?>
+
+            <form action="#" method="POST" class="form-inline" id="fans">
                 <p class="formfield">Name:</p>
-                <input type = "text" name="fname" class="form-control">
+                <input type="text" name="fname" class="form-control">
                 <br>
                 <p class="formfield formcomment">Comment:</p>
                 <textarea class="form-control textcomment" cols="25" rows="4" name="comment"></textarea>
@@ -161,11 +155,11 @@ require '../App/Models/Model.php';
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-9 col-md-9">
                     <p class="fieldcomment">Comments</p>
-
-                    <?php
-
-                  $model->get_comments();
-                    ?>
+                    <?php foreach ($comments as $item) { ?>
+                    <h6 id='date'><?= $item['date'] ?><h6>
+                            <p class='commentname'><?= $item['fname'] ?>: </p>
+                            <p class='comments'><?= $item['comment'] ?></p><br>
+                            <?php } ?>
 
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
@@ -175,11 +169,11 @@ require '../App/Models/Model.php';
     </div>
 
     <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer" style="padding:0px;">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer"  style="padding:0px";>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer" style="padding:0px" ;>
             <p class="copy">&copy Arctic Monkeys fan page</p>
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../public/js/vendor/custom.js" type="text/javascript"></script>
+    <script src="/js/vendor/custom.js" type="text/javascript"></script>
 </body>
 </html>

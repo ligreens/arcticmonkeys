@@ -1,20 +1,23 @@
 <?php
 namespace App\Controllers;
 Use App\Database;
+
 class Comments{
-    public function __construct()
+
+    /**
+     * @var Database
+     */
+
+    private $db;
+    public function __construct(Database $db)
     {
-        $db = new Database();
-        $this->pdo = $db;
+      $this->db = $db;
     }
     function insert_comment(){
         if(!empty($_POST['comment']) && !empty($_POST['fname']) && isset($_POST['send'])){
             $sql = "INSERT INTO `comments` (`fname`, `comment`) VALUES(:namn, :comment)";
-            $row = $this->pdo->prepare($sql);
-            $row ->execute(['namn' =>$_POST['fname'], 'comment' => $_POST['comment']]);
+            $stm = $this->db->prepare($sql);
+            $stm ->execute(['namn' =>$_POST['fname'], 'comment' => $_POST['comment']]);
         }
     }
 }
-
-
-$comments = new Comments;
