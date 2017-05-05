@@ -28,9 +28,11 @@ $db = new Database($config['user'], $config['password'], $config['host'], $confi
 
 // Normalisera url-sökvägar
 $path = function($uri) {
-	return ($uri == "/") ? $uri : rtrim($uri, '/');
+    $uri = ($uri == '/') ? $uri : rtrim($uri, '/');
+    $uri = explode('?', $uri);
+    $uri = array_shift($uri);
+    return $uri;
 };
-
 
 // Routing
 $controller = new Controller($baseDir);
@@ -39,15 +41,18 @@ switch ($path($_SERVER['REQUEST_URI'])) {
 	    $model = new Model($db);
 	    $comments = $model->get_comments();
 	    $member = $model->get_member_by_name('');
-
 	    $albums = $model->get_songs('');
 
-	    $add_comments = new \App\Controllers\Comments($db);
-        $delete_comments = new \App\Controllers\Comments($db);
-        $delete_comments->delete_comments();
+	    $comment = new \App\Controllers\Comments($db);
+        $comment->delete_comments();
 
-	    require $baseDir . '/views/index.php';
-	break;
+	    require $baseDir.'/views/index.php';
+    break;
+	    case '/concert':
+        require $baseDir.'/views/concert.php';
+
+
+        break;
 	default:
 		header('HTTP/1.0 404 Not Found');
 		echo 'Page not found';

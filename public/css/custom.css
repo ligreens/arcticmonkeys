@@ -218,3 +218,8 @@ hr{
 .menu:focus{
     text-decoration: none;
 }
+.delete{
+    padding:2px 3px 2px 3px ;
+    font-size:10px;
+    border:none;
+}

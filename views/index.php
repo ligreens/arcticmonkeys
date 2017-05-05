@@ -21,6 +21,7 @@
             <a href="#" class=" menu home"> HOME</a>
             <a href="#" class="menu albums"> ALBUMS</a>
             <a href="#" class=" menu fansforum ">FANS FORUM</a>
+            <a href ="concert" class="menu">CONCERTS</a>
         </div>
 
     </div>
@@ -148,9 +149,10 @@
     </div>
 
 
+
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment">
-           <?php $add_comments->insert_comment(); ?>
+           <?php $comment->insert_comment(); ?>
 
 
             <form action="#" method="POST" class="form-inline" id="fans">
@@ -163,6 +165,7 @@
                 <br>
                 <button type="submit" name="send" class="btn btn-primary send">Send</button>
             </form>
+
             <br>
             <div class="bordercomments col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-1 col-md-1"></div>
@@ -172,8 +175,8 @@
                     <h6 id='date'><?= $item['date'] ?><h6>
 
                             <form action="#" method="POST">
-                            <?php $delete_comments->delete_comments(); ?>
-                            <button type="submit" name="delete" class="pull-right" value="<?php echo $item['id'] ?>">Delete</button>
+                            <?php $comment->delete_comments(); ?>
+                            <button type="submit" name="delete" class="pull-right delete btn btn-primary" value="<?php echo $item['id'] ?>">Delete</button>
                             </form>
 
                             <p class='commentname'><?= $item['fname'] ?>: </p>
