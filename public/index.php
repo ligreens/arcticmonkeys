@@ -43,7 +43,8 @@ switch ($path($_SERVER['REQUEST_URI'])) {
 	    $albums = $model->get_songs('');
 
 	    $add_comments = new \App\Controllers\Comments($db);
-        //$add_comments->insert_comment();
+        $delete_comments = new \App\Controllers\Comments($db);
+        $delete_comments->delete_comments();
 
 	    require $baseDir . '/views/index.php';
 	break;

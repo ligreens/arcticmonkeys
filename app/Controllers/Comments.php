@@ -21,11 +21,12 @@ class Comments{
         }
     }
 
-    function delete_comments($id){
+    function delete_comments(){
         if(isset($_POST['delete'])){
-            $sql = "DELETE FROM `comments` WHERE id = $id";
-            $stm = $this->db->prepare($sql);
-            $stm->execute(['id' => $id{$_POST['delete']}]);
+            $sql = "DELETE FROM `comments` WHERE id = :id";
+            $delete_stm = $this->db->prepare($sql);
+            $delete_stm->execute(['id' => $_POST['delete']]);
+            return $delete_stm;
         }
     }
 }

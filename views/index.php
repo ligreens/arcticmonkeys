@@ -151,7 +151,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment">
            <?php $add_comments->insert_comment(); ?>
-            <?php $add_comments->delete_comments($id); ?>
+
 
             <form action="#" method="POST" class="form-inline" id="fans">
                 <p class="formfield">Name:</p>
@@ -168,11 +168,15 @@
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-9 col-md-9">
                     <p class="fieldcomment">Comments</p>
-                    <?php foreach ($comments as $item) { ?>
+                    <?php foreach ($comments as $item) {?>
                     <h6 id='date'><?= $item['date'] ?><h6>
-                            <button type="submit" name="delete" class="pull-right">Delete</button>
-                            <p class='commentname'><?= $item['fname'] ?>: </p>
 
+                            <form action="#" method="POST">
+                            <?php $delete_comments->delete_comments(); ?>
+                            <button type="submit" name="delete" class="pull-right" value="<?php echo $item['id'] ?>">Delete</button>
+                            </form>
+
+                            <p class='commentname'><?= $item['fname'] ?>: </p>
                             <p class='comments'><?= $item['comment'] ?></p><br>
 
                             <?php } ?>
