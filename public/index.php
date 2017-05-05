@@ -38,10 +38,12 @@ switch ($path($_SERVER['REQUEST_URI'])) {
 	case '/':
 	    $model = new Model($db);
 	    $comments = $model->get_comments();
-	    $member = $model->get_member_by_name('' );
+	    $member = $model->get_member_by_name('');
+
+	    $albums = $model->get_songs('');
 
 	    $add_comments = new \App\Controllers\Comments($db);
-        $add_comments->insert_comment();
+        //$add_comments->insert_comment();
 
 	    require $baseDir . '/views/index.php';
 	break;

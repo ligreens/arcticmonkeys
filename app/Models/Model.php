@@ -16,37 +16,22 @@ class Model{
         $this->db = $db;
     }
 
-    public function get_songs($sql) {
-        $row = $this->db->prepare($sql);
-        $row->execute([]);
-        foreach ($row as $value) {
+    public function get_songs($albums){
+        $sql = "SELECT `songs` FROM songs WHERE albums = :albums";
+        $stm = $this->db->prepare($sql);
+        $stm->execute([':albums' => $albums]);
+        return $stm->fetchAll();
 
-            $songs = $value['songs'];
-
-            echo "<p class='album'>" . $songs ."</p>" ;
-        }
     }
 
     public function get_member_by_name($name) {
-        $sql = "SELECT `name`  FROM members where `name` = :name ";
+        $sql = "SELECT `name` , `instruments` FROM members where `name` = :name ";
         $stm = $this->db->prepare($sql);
         $stm->execute([':name' => $name]);
-        return $stm->fetch();
+        return $stm->fetchAll();
 
     }
-    /*public function get_members($sql)
-    {
 
-        $row = $this->db->prepare($sql);
-        $row->execute();
-        foreach ($row as $item) {
-            $name = $item['name'];
-            $instrument = $item['instruments'];
-
-            echo "<h4>" . $name . ", " . $instrument . "</h4>";
-
-        }*/
-    //}
     public function get_comments($column = "date", $order_by = "DESC"){
         $sql = $sql = "SELECT * FROM comments ORDER BY `$column` $order_by";
         $stm = $this->db->prepare($sql);
