@@ -20,4 +20,12 @@ class Comments{
             $stm ->execute(['namn' =>$_POST['fname'], 'comment' => $_POST['comment']]);
         }
     }
+
+    function delete_comments($id){
+        if(isset($_POST['delete'])){
+            $sql = "DELETE FROM `comments` WHERE id = $id";
+            $stm = $this->db->prepare($sql);
+            $stm->execute(['id' => $id{$_POST['delete']}]);
+        }
+    }
 }
