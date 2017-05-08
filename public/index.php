@@ -13,15 +13,15 @@ require $baseDir . '/app/Controllers/login.php';
 
 
 // Ladda in Composers autoload-fil
-require  '../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // Ladda konfigurationsdata
-$config = require  $baseDir . '/config/config.php';
+$config = require $baseDir . '/config/config.php';
 
 $db = new Database($config['user'], $config['password'], $config['host'], $config['dbname'], $config['options']);
 
 // Normalisera url-sökvägar
-$path = function($uri) {
+$path = function ($uri) {
     $uri = ($uri == '/') ? $uri : rtrim($uri, '/');
     $uri = explode('?', $uri);
     $uri = array_shift($uri);
@@ -31,22 +31,22 @@ $path = function($uri) {
 // Routing
 $controller = new Controller($baseDir);
 switch ($path($_SERVER['REQUEST_URI'])) {
-	case '/':
-	    $model = new Model($db);
-	    $comments = $model->get_comments();
-	    $member = $model->get_member_by_name('');
-	    $albums = $model->get_songs('');
+    case '/':
+        $model = new Model($db);
+        $comments = $model->get_comments();
+        $member = $model->get_member_by_name('');
+        $albums = $model->get_songs('');
 
-	    $comment = new \App\Controllers\Controllers($db);
+        $comment = new \App\Controllers\Controllers($db);
         $comment->insert_comment();
 
-	    require $baseDir.'/views/index.php';
-    break;
-	    case '/concert':
-	    $model = new Model($db);
-	    $concert = $model->get_concerts();
+        require $baseDir . '/views/index.php';
+        break;
+    case '/concert':
+        $model = new Model($db);
+        $concert = $model->get_concerts();
 
-        require $baseDir.'/views/concert.php';
+        require $baseDir . '/views/concert.php';
         break;
 
     case '/admin':
@@ -54,7 +54,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $login = new \App\Controllers\Login($db);
         $login->login();
 
-        require $baseDir .'/views/admin.login.php';
+        require $baseDir . '/views/admin.login.php';
         break;
 
     case '/edit':
@@ -71,8 +71,8 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         //$login->failed_to_login();
         require $baseDir . '/views/edit.php';
         break;
-	default:
-		header('HTTP/1.0 404 Not Found');
-		echo 'Page not found';
-	break;
+    default:
+        header('HTTP/1.0 404 Not Found');
+        echo 'Page not found';
+        break;
 }

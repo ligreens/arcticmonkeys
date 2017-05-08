@@ -21,7 +21,7 @@
             <a href="#" class=" menu home"> HOME</a>
             <a href="#" class="menu albums"> ALBUMS</a>
             <a href="#" class=" menu fansforum ">FANS FORUM</a>
-            <a href ="concert" class="menu">CONCERTS</a>
+            <a href="concert" class="menu">CONCERTS</a>
         </div>
 
     </div>
@@ -39,9 +39,8 @@
                      class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12 alex">
                 <?php $member = $model->get_member_by_name("Alex Turner"); ?>
                 <?php foreach ($member as $item) { ?>
-                <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments']?></h4>
+                    <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments'] ?></h4>
                 <?php } ?>
-
 
 
             </div>
@@ -50,9 +49,8 @@
                 <img src="images/img/matt.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <?php $member = $model->get_member_by_name("Matthew Helders"); ?>
                 <?php foreach ($member as $item) { ?>
-                    <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments']?></h4>
+                    <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments'] ?></h4>
                 <?php } ?>
-
 
 
             </div>
@@ -70,7 +68,7 @@
                 <img src="images/img/nick.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <?php $member = $model->get_member_by_name("Nick O'Malley"); ?>
                 <?php foreach ($member as $item) { ?>
-                    <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments']?></h4>
+                    <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments'] ?></h4>
                 <?php } ?>
             </div>
 
@@ -86,7 +84,7 @@
         </div>
         <div class="col-lg-6 col-md-6 ">
             <h2>AM</h2>
-            <?php $albums = $model->get_songs('AM')?>
+            <?php $albums = $model->get_songs('AM') ?>
             <?php foreach ($albums as $item) { ?>
             <p class="album"><?= $item['songs'] ?><p>
                 <?php } ?>
@@ -100,7 +98,7 @@
         </div>
         <div class="col-lg-6 col-md-6">
             <h2>Suck It and See</h2>
-            <?php $albums = $model->get_songs('Suck It and See')?>
+            <?php $albums = $model->get_songs('Suck It and See') ?>
             <?php foreach ($albums as $item) { ?>
             <p class="album"><?= $item['songs'] ?><p>
                 <?php } ?>
@@ -113,7 +111,7 @@
         </div>
         <div class="col-lg-6 col-md-6">
             <h2>Humbug</h2>
-            <?php $albums = $model->get_songs('Humbug')?>
+            <?php $albums = $model->get_songs('Humbug') ?>
             <?php foreach ($albums as $item) { ?>
             <p class="album"><?= $item['songs'] ?><p>
                 <?php } ?>
@@ -126,7 +124,7 @@
             </div>
             <div class="col-lg-6 col-md-6">
                 <h2>Favourite Worst Nightmare</h2>
-                <?php $albums = $model->get_songs('Favourite worst nightmare')?>
+                <?php $albums = $model->get_songs('Favourite worst nightmare') ?>
                 <?php foreach ($albums as $item) { ?>
                 <p class="album"><?= $item['songs'] ?><p>
                     <?php } ?>
@@ -139,7 +137,7 @@
             </div>
             <div class="col-lg-6 col-md-6">
                 <h2>Whatever People Say I Am, That's What I'm Not</h2>
-                <?php $albums = $model->get_songs('Whatever People Say I Am, That\'s What I\'m Not')?>
+                <?php $albums = $model->get_songs('Whatever People Say I Am, That\'s What I\'m Not') ?>
                 <?php foreach ($albums as $item) { ?>
                 <p class="album"><?= $item['songs'] ?><p>
                     <?php } ?>
@@ -149,10 +147,9 @@
     </div>
 
 
-
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment">
-           <?php $comment->insert_comment(); ?>
+            <?php $comment->insert_comment(); ?>
 
 
             <form action="#" method="POST" class="form-inline" id="fans">
@@ -171,12 +168,13 @@
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-9 col-md-9">
                     <p class="fieldcomment">Comments</p>
-                    <?php foreach ($comments as $item) {?>
-                    <h6 id='date'><?= $item['date'] ?><h6>
+                    <?php foreach ($comments as $item) { ?>
+                    <h6 id='date'><?= $item['date'] ?>
+                        <h6>
 
-                   <!--         <form action="#" method="POST">
-                            <?php /*$comment->delete_comments(); */?>
-                            <button type="submit" name="delete" class="pull-right delete btn btn-primary" value="<?php /*echo $item['id'] */?>">Delete</button>
+                            <!--         <form action="#" method="POST">
+                            <?php /*$comment->delete_comments(); */ ?>
+                            <button type="submit" name="delete" class="pull-right delete btn btn-primary" value="<?php /*echo $item['id'] */ ?>">Delete</button>
                             </form>-->
 
                             <p class='commentname'><?= $item['fname'] ?>: </p>

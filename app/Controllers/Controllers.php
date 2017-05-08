@@ -1,28 +1,35 @@
 <?php
+
 namespace App\Controllers;
+
 Use App\Database;
 
-class Controllers{
+class Controllers
+{
 
     /**
      * @var Database
      */
 
     private $db;
+
     public function __construct(Database $db)
     {
-      $this->db = $db;
+        $this->db = $db;
     }
-    function insert_comment(){
-        if(!empty($_POST['comment']) && !empty($_POST['fname']) && isset($_POST['send'])){
+
+    function insert_comment()
+    {
+        if (!empty($_POST['comment']) && !empty($_POST['fname']) && isset($_POST['send'])) {
             $sql = "INSERT INTO `comments` (`fname`, `comment`) VALUES(:namn, :comment)";
             $stm = $this->db->prepare($sql);
-            $stm ->execute(['namn' =>$_POST['fname'], 'comment' => $_POST['comment']]);
+            $stm->execute(['namn' => $_POST['fname'], 'comment' => $_POST['comment']]);
         }
     }
 
-    function delete_comments(){
-        if(isset($_POST['delete'])){
+    function delete_comments()
+    {
+        if (isset($_POST['delete'])) {
             $sql = "DELETE FROM `comments` WHERE id = :id";
             $delete_stm = $this->db->prepare($sql);
             $delete_stm->execute(['id' => $_POST['delete']]);
@@ -30,8 +37,9 @@ class Controllers{
         }
     }
 
-    function delete_concerts(){
-        if(isset($_POST['delete_concerts'])){
+    function delete_concerts()
+    {
+        if (isset($_POST['delete_concerts'])) {
             $sql = "DELETE FROM `concert` WHERE id = :id";
             $delete_stm = $this->db->prepare($sql);
             $delete_stm->execute(['id' => $_POST['delete_concerts']]);
@@ -39,11 +47,12 @@ class Controllers{
         }
     }
 
-    function add_concert(){
-        if(!empty($_POST['city']) && !empty($_POST['date']) && isset($_POST['add'])){
+    function add_concert()
+    {
+        if (!empty($_POST['city']) && !empty($_POST['date']) && isset($_POST['add'])) {
             $sql = "INSERT INTO `concert` (`city`, `date`) VALUES(:city, :dat)";
             $stm = $this->db->prepare($sql);
-            $stm ->execute(['city' =>$_POST['city'], 'dat' => $_POST['date']]);
+            $stm->execute(['city' => $_POST['city'], 'dat' => $_POST['date']]);
         }
     }
 

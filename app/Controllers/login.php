@@ -1,6 +1,9 @@
 <?php
+
 namespace App\Controllers;
+
 Use App\Database;
+
 class Login
 {
     /**
@@ -17,7 +20,7 @@ class Login
     function login()
     {
         session_start();
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $user = $_POST['user'];
             $password = $_POST['password'];
 
@@ -29,14 +32,12 @@ class Login
                 $main = array('data' => $stmt);
                 $crypt_password = crypt($password, $stmt[0]['salt']);
             }
-            if( $crypt_password = crypt($password, $stmt[0]['salt'])){
+            if ($crypt_password = crypt($password, $stmt[0]['salt'])) {
                 $_SESSION['userid'] = $stmt[0]['id'];
-            }
-
-            else {
+            } else {
                 echo 'noope';
             }
         }
     }
 
-    }
+}

@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Controllers;
+
 Use App\Database;
 
 function mt_rand_str($l, $c = 'abcdefghiJKkLmnopQRStuVwxyz1234567890')
@@ -8,23 +10,27 @@ function mt_rand_str($l, $c = 'abcdefghiJKkLmnopQRStuVwxyz1234567890')
     }
     return $s;
 }
-class Admin{
+
+class Admin
+{
     /**
      * @var Database
      */
     private $db;
+
     public function __construct(Database $db)
     {
         $this->db = $db;
     }
 
 
-    function add_admin(){
-        if(isset($_POST['create'])){
+    function add_admin()
+    {
+        if (isset($_POST['create'])) {
             $sql = "INSERT INTO `admin` (`user`, `password`, `salt`) VALUES(:admin, :password, :salt)";
             $salt = mt_rand_str(31);
             $stm = $this->db->prepare($sql);
-            $stm ->execute(['admin' =>$_POST['admin'], 'password' => crypt($_POST['password'], $salt), 'salt' => $salt]);
+            $stm->execute(['admin' => $_POST['admin'], 'password' => crypt($_POST['password'], $salt), 'salt' => $salt]);
         }
     }
 

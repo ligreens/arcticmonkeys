@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arctic Monkeys</title>
+    <title>Concerts</title>
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
         <hr>
         <div class="row pull-right menurow" style="margin:3px;">
             <a href="/" class=" menu home"> HOME</a>
-            <a href ="concert" class="menu">CONCERTS</a>
+            <a href="concert" class="menu">CONCERTS</a>
         </div>
 
     </div>
@@ -28,8 +28,8 @@
 
         <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">Upcoming concerts</p>
 
-        <?php foreach ($concert as $item) {?>
-        <h6 id='date'><?= $item['city'] . " " . $item['date']?><h6>
+        <?php foreach ($concert as $item) { ?>
+        <h6 id='date'><?= $item['city'] . " " . $item['date'] ?><h6>
                 <?php } ?>
 
     </div>

@@ -1,54 +1,48 @@
 
-h1{
-  z-index:1;
-  position: absolute;
-  margin-left: 10px;
+h1 {
+    z-index: 1;
+    position: absolute;
+    margin-left: 10px;
 }
 
-.main{
-  margin-top:40px;
-  margin-bottom:100px;
+.main {
+    margin-top: 40px;
+    margin-bottom: 100px;
 
 }
 
-.alex{
-    padding-botton:20px;
+.alex {
+    padding-botton: 20px;
 }
 
-.header{
+.header {
 
     background-image: url("../images/back2.png");
     height: 700px;
 
-
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-
 }
 
-.dive{
+.dive {
 
     background-image: url("../images/bild1.png");
     height: 700px;
-    
+
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-
 }
 
-
-
-
-.am{
+.am {
 
     background-image: url("../images/am.png");
-    height: 600px;
+    height: 700px;
 
     background-attachment: fixed;
     background-position: center;
@@ -56,45 +50,43 @@ h1{
     background-size: cover;
 }
 
-.suck{
+.suck {
 
     background-image: url("../images/suckit.png");
-    height: 600px;
-
+    height: 700px;
 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.humbug{
+
+.humbug {
 
     background-image: url("../images/humbug1.png");
-    height: 600px;
-
+    height: 700px;
 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.worst{
+
+.worst {
 
     background-image: url("../images/worst.png");
-    height: 600px;
-
+    height: 700px;
 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.people{
+
+.people {
 
     background-image: url("../images/people.png");
-    height: 600px;
-
-
+    height: 700px;
 
     background-attachment: fixed;
     background-position: center;
@@ -102,138 +94,153 @@ h1{
     background-size: cover;
 }
 
-.comment{
+.comment {
     background-image: url("../images/bild2.png");
     height: 700px;
 
-
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .btn-primary {
     color: #fff;
     background-color: grey;
     border-color: grey;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: darkgrey;
 }
 
-.formfield{
-    color:white;
-    margin-top:20px;
+.formfield {
+    color: white;
+    margin-top: 20px;
 }
 
-
-.formcomment{
-    margin-top:10px;
-    margin-bottom:10px;
+.formcomment {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-h4{
-    text-align:center;
-    color:white;
+h4 {
+    text-align: center;
+    color: white;
 }
 
-h5{
+h5 {
 
-    color:black;
+    color: black;
 }
 
-.bordercomments{
-    padding-top:20px;
-    width:400px;
-    height:300px;
+.bordercomments {
+    padding-top: 20px;
+    width: 400px;
+    height: 300px;
     overflow: scroll;
     background-color: white;
 }
 
-.footer{
-    font-style:italic;
+.footer {
+    font-style: italic;
     text-align: center;
-    color:white;
+    color: white;
     background-color: black;
     font-size: 10px;
 }
-.fieldcomment{
-    padding-bottom:5px;
-    border-bottom:1px solid lightgrey;
-    font-size:15px;
+
+.fieldcomment {
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgrey;
+    font-size: 15px;
     font-weight: bold;
-}
-.commentname{
-    font-weight: bold;
-    color:darkslateblue;
 }
 
-.comments{
+.commentname {
+    font-weight: bold;
+    color: darkslateblue;
+}
+
+.comments {
     border-bottom: 1px solid lightgrey;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 }
-#date{
-    margin-bottom:-7px;
+
+#date {
+    margin-bottom: -7px;
 }
-h2{
-    text-align:center ;
-}
-.album{
-    color:grey;
+
+h2 {
     text-align: center;
 }
 
-.cdcover{
+.album {
+    color: grey;
+    text-align: center;
+}
+
+.cdcover {
     background-color: black;
 }
-.cdcov{
+
+.cdcov {
     background-color: black;
 }
-.copy{
-    color:dimgrey;
+
+.copy {
+    color: dimgrey;
 }
-hr{
-    border-top:3px solid black;
-    margin-bottom:-5px;
+
+hr {
+    border-top: 3px solid black;
+    margin-bottom: -5px;
 }
-.menu{
+
+.menu {
     font-weight: bold;
-    color:black;
-    padding:3px 8px 4px 8px;
+    color: black;
+    padding: 3px 8px 4px 8px;
     font-size: 12px;
 }
-.menurow{
-    margin-top:-20px;
+
+.menurow {
+    margin-top: -20px;
 }
 
-.menu:visited{
-    color:black;
+.menu:visited {
+    color: black;
 }
 
-.menu:hover{
-    background-color:black;
-    color:white;
+.menu:hover {
+    background-color: black;
+    color: white;
     text-decoration: none;
 }
-.menu:focus{
+
+.menu:focus {
     text-decoration: none;
 }
-.delete{
-    padding:2px 3px 2px 3px ;
-    font-size:10px;
-    border:none;
-}
-.formedit{
-    color:black;
-}
-.edit{
-background-color: ghostwhite;
+
+.delete {
+    padding: 2px 3px 2px 3px;
+    font-size: 10px;
+    border: none;
 }
 
-.concert{
+.formedit {
+    color: black;
+}
+
+.edit {
+    background-color: ghostwhite;
+}
+
+.concert {
     font-size: 15px;
 }
-.concerts{
-    margin-top:20px;
-    border:1px solid black;
+
+.concerts {
+    margin-top: 20px;
+    border: 1px solid black;
 }
