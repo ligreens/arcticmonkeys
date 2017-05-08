@@ -174,10 +174,10 @@
                     <?php foreach ($comments as $item) {?>
                     <h6 id='date'><?= $item['date'] ?><h6>
 
-                            <form action="#" method="POST">
-                            <?php $comment->delete_comments(); ?>
-                            <button type="submit" name="delete" class="pull-right delete btn btn-primary" value="<?php echo $item['id'] ?>">Delete</button>
-                            </form>
+                   <!--         <form action="#" method="POST">
+                            <?php /*$comment->delete_comments(); */?>
+                            <button type="submit" name="delete" class="pull-right delete btn btn-primary" value="<?php /*echo $item['id'] */?>">Delete</button>
+                            </form>-->
 
                             <p class='commentname'><?= $item['fname'] ?>: </p>
                             <p class='comments'><?= $item['comment'] ?></p><br>

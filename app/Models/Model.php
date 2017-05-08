@@ -39,5 +39,11 @@ class Model{
         return $stm->fetchAll();
     }
 
+    public function get_concerts($column = "date", $order_by ="ASC"){
+        $sql = "SELECT * FROM concert ORDER BY `$column` $order_by";
+        $stm = $this->db->prepare($sql);
+        $stm->execute();
+        return $stm->fetchAll();
+    }
 
 }

@@ -2,7 +2,7 @@
 namespace App\Controllers;
 Use App\Database;
 
-class Comments{
+class Controllers{
 
     /**
      * @var Database
@@ -27,6 +27,14 @@ class Comments{
             $delete_stm = $this->db->prepare($sql);
             $delete_stm->execute(['id' => $_POST['delete']]);
             return $delete_stm;
+        }
+    }
+
+    function failed_to_login()
+    {
+        if (!isset($_SESSION['logged_in'])) {
+            header("Location: /admin");
+            exit;
         }
     }
 }

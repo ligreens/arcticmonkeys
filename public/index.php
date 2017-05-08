@@ -7,16 +7,10 @@ $baseDir = __DIR__ . '/..';
 
 require $baseDir . '/app/database.php';
 require $baseDir . '/app/Models/model.php';
-require $baseDir . '/app/Controllers/comments.php';
+require $baseDir . '/app/Controllers/Controllers.php';
+require $baseDir . '/app/Controllers/admin.php';
+require $baseDir . '/app/Controllers/login.php';
 
-
-//$config = require('../config/config.php');
-//$db = new App\Database($config);
-
-//$controller = new Controller($db);
-//$controller->index();
-
-//Sökväg till grundmappen i projektet
 
 // Ladda in Composers autoload-fil
 require  '../vendor/autoload.php';
@@ -43,15 +37,34 @@ switch ($path($_SERVER['REQUEST_URI'])) {
 	    $member = $model->get_member_by_name('');
 	    $albums = $model->get_songs('');
 
-	    $comment = new \App\Controllers\Comments($db);
-        $comment->delete_comments();
+	    $comment = new \App\Controllers\Controllers($db);
+        $comment->insert_comment();
 
 	    require $baseDir.'/views/index.php';
     break;
 	    case '/concert':
+	    $model = new Model($db);
+	    $concert = $model->get_concerts();
+
         require $baseDir.'/views/concert.php';
+        break;
 
+    case '/admin':
+        $login = new \App\Controllers\Login($db);
+        $login->login();
 
+        require $baseDir .'/views/admin.login.php';
+        break;
+
+    case '/edit':
+        $model = new Model($db);
+        $comments = $model->get_comments();
+        $comment = new \App\Controllers\Controllers($db);
+        $comment->delete_comments();
+
+        $login = new App\Controllers\Controllers($db);
+        $login->failed_to_login();
+        require $baseDir . '/views/edit.php';
         break;
 	default:
 		header('HTTP/1.0 404 Not Found');
