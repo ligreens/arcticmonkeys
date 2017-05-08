@@ -19,19 +19,27 @@
         <hr>
         <div class="row pull-right menurow" style="margin:3px;">
             <a href="/" class=" menu home"> HOME</a>
-            <a href="concert" class="menu">CONCERTS</a>
+            <a href="#" class="menu concertmenu">CONCERTS</a>
         </div>
 
     </div>
 
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+    <div id="concertclick" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background" style="padding:0;">
+        <div class="col-lg-1"></div>
 
-        <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">Upcoming concerts</p>
+        <div class="col-lg-7">
+            <p id="concertheading">Upcoming concerts</p>
 
-        <?php foreach ($concert as $item) { ?>
-        <h6 id='date'><?= $item['city'] . " " . $item['date'] ?><h6>
+            <?php foreach ($concert as $item) { ?>
+
+            <img src="images/img/alex.jpg" class="col-lg-2 img-responsive">
+            <form action="#" method="POST">
+                <button type="submit" name="" class="pull-right info btn btn-primary" value="">More info </button>
+            </form>
+            <p class="concertlist col-lg-10"><?= $item['city'] . ", " . $item['date'] ?><p>
                 <?php } ?>
-
+        </div>
+        <div class="col-lg-4"></div>
     </div>
 
     <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer" style="padding:0px;">

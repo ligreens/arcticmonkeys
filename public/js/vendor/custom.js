@@ -1,9 +1,4 @@
 
- //
- //
- // $('#UP').click(function(){
- //     $('html, body').animate({scrollTop:0}, 'slow');
- // });
 
  $(".albums").click(function() {
      $('html, body').animate({
@@ -17,3 +12,8 @@
     }, 1000);
 });
 
+ $(".concertmenu").click(function() {
+     $('html, body').animate({
+         scrollTop: $("#concertclick").offset().top
+     }, 1000);
+ });
