@@ -19,7 +19,7 @@
         <hr>
         <div class="row pull-right menurow" style="margin:3px;">
             <a href="#" class=" menu home"> HOME</a>
-            <a href="#" class="menu albums"> ALBUMS</a>
+            <a href="albums" class="menu albums"> ALBUMS</a>
             <a href="#" class=" menu fansforum ">FANS FORUM</a>
             <a href="concert" class="menu">CONCERTS</a>
         </div>
@@ -76,75 +76,7 @@
     </main>
 </div>
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cd" id="albums" style="padding:0px;">
 
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cdcover" style="padding:0px;">
-        <div class="col-lg-6 col-md-6 col-sm-12 xol-xs-12 am ">
-
-        </div>
-        <div class="col-lg-6 col-md-6 ">
-            <h2>AM</h2>
-            <?php $albums = $model->get_songs('AM') ?>
-            <?php foreach ($albums as $item) { ?>
-            <p class="album"><?= $item['songs'] ?><p>
-                <?php } ?>
-
-        </div>
-    </div>
-
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cdcov" style="padding:0px;">
-        <div class="col-lg-6 col-md-6 suck">
-
-        </div>
-        <div class="col-lg-6 col-md-6">
-            <h2>Suck It and See</h2>
-            <?php $albums = $model->get_songs('Suck It and See') ?>
-            <?php foreach ($albums as $item) { ?>
-            <p class="album"><?= $item['songs'] ?><p>
-                <?php } ?>
-        </div>
-    </div>
-
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cdcover" style="padding:0px;">
-        <div class="col-lg-6 col-md-6 humbug">
-
-        </div>
-        <div class="col-lg-6 col-md-6">
-            <h2>Humbug</h2>
-            <?php $albums = $model->get_songs('Humbug') ?>
-            <?php foreach ($albums as $item) { ?>
-            <p class="album"><?= $item['songs'] ?><p>
-                <?php } ?>
-
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cdcov" style="padding:0px;">
-            <div class="col-lg-6 col-md-6 worst">
-
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <h2>Favourite Worst Nightmare</h2>
-                <?php $albums = $model->get_songs('Favourite worst nightmare') ?>
-                <?php foreach ($albums as $item) { ?>
-                <p class="album"><?= $item['songs'] ?><p>
-                    <?php } ?>
-            </div>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cdcover" style="padding:0px;">
-            <div class="col-lg-6 col-md-6 people">
-
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <h2>Whatever People Say I Am, That's What I'm Not</h2>
-                <?php $albums = $model->get_songs('Whatever People Say I Am, That\'s What I\'m Not') ?>
-                <?php foreach ($albums as $item) { ?>
-                <p class="album"><?= $item['songs'] ?><p>
-                    <?php } ?>
-            </div>
-        </div>
-
-    </div>
 
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">

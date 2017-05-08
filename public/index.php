@@ -35,7 +35,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $model = new Model($db);
         $comments = $model->get_comments();
         $member = $model->get_member_by_name('');
-        $albums = $model->get_songs('');
+        //$albums = $model->get_songs('');
 
         $comment = new \App\Controllers\Controllers($db);
         $comment->insert_comment();
@@ -55,6 +55,13 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $login->login();
 
         require $baseDir . '/views/admin.login.php';
+        break;
+
+    case '/albums':
+        $model = new Model($db);
+        $albums = $model->get_songs('');
+
+        require $baseDir . '/views/albums.php';
         break;
 
     case '/edit':

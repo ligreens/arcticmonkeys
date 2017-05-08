@@ -13,9 +13,9 @@
     <link href="/css/custom.css" rel="stylesheet">
 
 </head>
-<body id="home">
+<body>
 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header" style="padding: 0;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding: 0;">
         <hr>
         <div class="row pull-right menurow" style="margin:3px;">
             <a href="/" class=" menu home"> HOME</a>
@@ -32,7 +32,7 @@
 
             <?php foreach ($concert as $item) { ?>
 
-            <img src="images/img/alex.jpg" class="col-lg-2 img-responsive">
+            <img src="images/concert.jpg" class="col-lg-2 img-responsive">
             <form action="#" method="POST">
                 <button type="submit" name="" class="pull-right info btn btn-primary" value="">More info </button>
             </form>
