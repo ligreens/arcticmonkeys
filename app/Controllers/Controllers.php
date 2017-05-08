@@ -56,6 +56,16 @@ class Controllers
         }
     }
 
+    function get_album($album)
+    {
+        if (isset($_POST['am'])) {
+            $sql = "SELECT `songs` FROM songs WHERE albums = :album";
+            $stm = $this->db->prepare($sql);
+            $stm->execute(['album' => $album]);
+            return $stm->fetchAll();
+        }
+    }
+
     function update_concert()
     {
         if (isset($_POST['update'])) {

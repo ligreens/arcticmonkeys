@@ -60,7 +60,8 @@ switch ($path($_SERVER['REQUEST_URI'])) {
     case '/albums':
         $model = new Model($db);
         $albums = $model->get_songs('');
-
+        $get_albums = new \App\Controllers\Controllers($db);
+        $get_albums->get_album('');
         require $baseDir . '/views/albums.php';
         break;
 

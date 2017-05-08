@@ -108,7 +108,17 @@ h1 {
 
 .comment {
     background-image: url("../images/bild2.png");
-    height: 700px;
+    height: 800px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.albums {
+    background-image: url("../images/back4.jpg");
+    height: 800px;
 
     background-attachment: fixed;
     background-position: center;
@@ -148,10 +158,17 @@ h5 {
 
 .bordercomments {
     padding-top: 20px;
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
     overflow: scroll;
-    background-color: white;
+    background-color: black;
+}
+
+.item:nth-child(odd){
+    background-color:black;
+}
+.item:nth-child(even){
+    background-color:#535555;
 }
 
 .footer {
@@ -164,23 +181,29 @@ h5 {
 
 .fieldcomment {
     padding-bottom: 5px;
-    border-bottom: 1px solid lightgrey;
-    font-size: 15px;
+    /*border-bottom: 1px solid lightgrey;*/
+    font-size: 20px;
     font-weight: bold;
 }
 
 .commentname {
     font-weight: bold;
-    color: darkslateblue;
+    color: white;
+    font-size: 18px;
+    border-bottom:1px solid white;
 }
 
 .comments {
-    border-bottom: 1px solid lightgrey;
+    /*border-bottom: 1px solid lightgrey;*/
     padding-bottom: 5px;
+    font-size: 13px;
+    color:white;
 }
 
 #date {
-    margin-bottom: -7px;
+    margin-top: -7px;
+
+    color:white;
 }
 
 h2 {
@@ -265,6 +288,7 @@ hr {
     color:#47C49A;
 
 
+
 }
 #concert{
     padding-bottom:25px;
@@ -279,4 +303,44 @@ hr {
     margin-top:10px;
     background-color:#47C49A;
     border:none;
+}
+.fans{
+    margin-left:25px;
+}
+.addcomment{
+    font-size: 30px;
+    color:white;
+    border-bottom:4px solid white;
+    font-weight: bold;
+    line-height: 0.9;
+}
+#songs{
+    margin-top:50px;
+    color:white;
+    border-top:4px solid white;
+    font-size:30px;
+    font-weight: bold;
+
+}
+.albumbutton{
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    color:white;
+}
+ul{
+    list-style-type: none;
+}
+
+#homealbums{
+    background-color:black;
+}
+.songlist{
+    color:white;
+    font-size: 10px;
+    line-height: 0.9;
+}
+.cd{
+    text-decoration: underline;
 }

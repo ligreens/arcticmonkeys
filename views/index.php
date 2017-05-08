@@ -19,7 +19,7 @@
         <hr>
         <div class="row pull-right menurow" style="margin:3px;">
             <a href="#" class=" menu home"> HOME</a>
-            <a href="albums" class="menu albums"> ALBUMS</a>
+            <a href="albums" class="menu"> ALBUMS</a>
             <a href="#" class=" menu fansforum ">FANS FORUM</a>
             <a href="concert" class="menu">CONCERTS</a>
         </div>
@@ -81,10 +81,13 @@
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment">
+            <p class="fans addcomment">ADD A COMMENT</p>
+
+
             <?php $comment->insert_comment(); ?>
 
-
-            <form action="#" method="POST" class="form-inline" id="fans">
+        <div>
+            <form action="#" method="POST" class="form-inline fans" >
                 <p class="formfield">Name:</p>
                 <input type="text" name="fname" class="form-control">
                 <br>
@@ -96,17 +99,20 @@
             </form>
 
             <br>
-            <div class="bordercomments col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="bordercomments col-lg-12 col-md-12 col-sm-12 col-xs-12 fans">
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-9 col-md-9">
                     <p class="fieldcomment">Comments</p>
+
                     <?php foreach ($comments as $item) { ?>
-                    <h6 id='date'><?= $item['date'] ?>
-                        <h6>
+                        <span class="item">
+
 
                             <p class='commentname'><?= $item['fname'] ?>: </p>
+                    <h6 id='date' class=""><?= $item['date'] ?>
+                        <h6>
                             <p class='comments'><?= $item['comment'] ?></p><br>
-
+                    </span>
                             <?php } ?>
 
                 </div>
