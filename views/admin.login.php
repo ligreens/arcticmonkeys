@@ -17,7 +17,7 @@
 
 <form action="edit" method="post">
     Admin:<br>
-    <input type="text" name="admin" value="">
+    <input type="text" name="user" value="">
     <br>
     Password:<br>
     <input type="password" name="password" value="">

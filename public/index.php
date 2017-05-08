@@ -50,6 +50,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         break;
 
     case '/admin':
+
         $login = new \App\Controllers\Login($db);
         $login->login();
 
@@ -59,11 +60,15 @@ switch ($path($_SERVER['REQUEST_URI'])) {
     case '/edit':
         $model = new Model($db);
         $comments = $model->get_comments();
-        $comment = new \App\Controllers\Controllers($db);
-        $comment->delete_comments();
-
+        $controller = new \App\Controllers\Controllers($db);
+        $controller->delete_comments();
+        $controller->add_concert();
+        $controller->update_concert();
+        $concert = $model->get_concerts();
+        $delete = $controller->delete_concerts();
         $login = new App\Controllers\Controllers($db);
-        $login->failed_to_login();
+
+        //$login->failed_to_login();
         require $baseDir . '/views/edit.php';
         break;
 	default:
