@@ -30,19 +30,20 @@
     </form>
 
         <?php foreach ($concert as $item) {?>
+<div class="concerts col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <h3 id='date'><?= $item['city'] . " " . $item['date']?><h3>
                 <?php $controller->delete_concerts(); ?>
 
                 <form action="#" method="POST"  class="form-inline">
-                    <p>City:</p>
+                    <p class="concert">City:</p>
                     <input type="text" name="city" class="form-control">
                     <br>
-                    <p>Date:</p>
+                    <p class="concert">Date:</p>
                     <input type="text" name="date" class="form-control">
                     <button type="submit" name="delete_concerts" class=" delete btn btn-primary" value="<?php echo $item['id'] ?>">Delete</button>
                     <button type="submit" name="update" class=" delete btn btn-primary" value="<?php echo $item['id'] ?>">Update</button>
                 </form>
-
+                </div>
                 <?php } ?>
 
 
@@ -52,7 +53,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
             <h3>Comments</h3>
-            <?php /*$controller->insert_comment(); */?><!--
+            <?php $controller->insert_comment(); ?>
 
 
             <form action="#" method="POST" class="form-inline" id="fans">
@@ -66,7 +67,7 @@
                 <button type="submit" name="send" class="btn btn-primary send">Send</button>
             </form>
 
-            <br>-->
+            <br>
             <div class="bordercomments col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-9 col-md-9">

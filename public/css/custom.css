@@ -229,3 +229,11 @@ hr{
 .edit{
 background-color: ghostwhite;
 }
+
+.concert{
+    font-size: 15px;
+}
+.concerts{
+    margin-top:20px;
+    border:1px solid black;
+}
