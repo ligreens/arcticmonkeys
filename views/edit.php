@@ -83,26 +83,21 @@
                 <?php foreach ($comments as $item) { ?>
                 <h6 id='date editdate'><?= $item['date'] ?>
                     <h6>
-
                         <form action="#" method="POST">
                             <?php $controller->delete_comments(); ?>
                             <button type="submit" name="delete" class="pull-right delete btn btn-primary"
                                     value="<?php echo $item['id'] ?>">Delete
                             </button>
                         </form>
-
                         <p class='commentname editcommentanme'><?= $item['fname'] ?>: </p>
                         <p class='comments editcomments  '><?= $item['comment'] ?></p><br>
-
                         <?php } ?>
-
             </div>
             <div class="col-lg-2 col-md-2"></div>
 
         </div>
     </div>
 </div>
-
 <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer " style="padding:0px;">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer edit" style="padding:0px" ;>
         <p class="copy">Edit page</p>

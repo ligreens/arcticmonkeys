@@ -15,17 +15,6 @@ h1 {
     padding-botton: 20px;
 }
 
-.background {
-
-    background-image: url("../images/back3.jpg");
-    height: 700px;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
 
 .header {
 
@@ -53,7 +42,7 @@ h1 {
 
 
 .comment {
-    background-image: url("../images/bild2.png");
+    background-image: url("../images/back4.jpg");
     height: 800px;
 
     background-attachment: fixed;
@@ -65,9 +54,12 @@ h1 {
 
 
 .btn-primary {
-    color: #fff;
-    background-color: grey;
-    border-color: grey;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 12px;
+    background: #fff;
+    padding: 2px 5px 1px;
 }
 
 .btn-primary:hover {
@@ -84,6 +76,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+.textcomment{
+    background-color:#eee8d8;
+}
+
 h4 {
     text-align: center;
     color: white;
@@ -98,16 +94,10 @@ h5 {
     padding-top: 20px;
     width: 600px;
     height: 400px;
-    overflow: scroll;
+    overflow: auto;
     background-color: black;
 }
 
-.item:nth-child(odd){
-    background-color:black;
-}
-.item:nth-child(even){
-    background-color:#535555;
-}
 
 .footer {
     font-style: italic;
@@ -119,8 +109,7 @@ h5 {
 
 .fieldcomment {
     padding-bottom: 5px;
-    /*border-bottom: 1px solid lightgrey;*/
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color:white;
 }
@@ -128,13 +117,11 @@ h5 {
 .commentname {
     font-weight: bold;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     border-bottom:1px solid white;
 }
 
 .comments {
-    /*border-bottom: 1px solid lightgrey;*/
-    padding-bottom: 5px;
     font-size: 13px;
     color:white;
 }
@@ -164,6 +151,8 @@ h2 {
 
 .copy {
     color: dimgrey;
+    border-top:1px solid dimgrey;
+    padding-top:5px;
 }
 
 hr {
@@ -224,9 +213,7 @@ hr {
     padding-bottom:15px;
     font-size: 15px;
     font-weight: bold;
-    color:#47C49A;
-
-
+    color:black;
 
 }
 #concert{
@@ -238,9 +225,10 @@ hr {
     font-size: 25px;
     margin-left:15px;
 }
+
 .info{
     margin-top:10px;
-    background-color:#47C49A;
+    background-color:#eee8d8;
     border:none;
 }
 .fans{
@@ -249,9 +237,9 @@ hr {
 .addcomment{
     font-size: 30px;
     color:white;
-    border-bottom:4px solid white;
+    border-top:4px solid white;
     font-weight: bold;
-    line-height: 0.9;
+
 }
 .songslist{
     margin-top:50px;
@@ -335,4 +323,18 @@ hr {
 }
 .albums{
     height:800px;
+}
+.releases{
+    font-size: 25px;
+    color:white;
+    font-weight: bold;
+    margin-top:10px;
+}
+.am{
+    border:1px solid dimgrey;
+}
+.second{
+    padding-top:8px;
+    padding-left:8px;
+
 }

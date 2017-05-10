@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arctic Monkeys</title>
+    <title>RELEASES | Arctic Monkeys</title>
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
         <hr>
         <div class="row pull-right menurow" style="margin:3px;">
             <a href="/" class=" menu home"> HOME</a>
-            <a href="#" class="menu album"> ALBUMS</a>
+            <a href="#" class="menu album"> RELEASES</a>
             <a href="/" class=" menu fansforum ">FANS FORUM</a>
             <a href="concert" class="menu">CONCERTS</a>
         </div>
@@ -29,9 +29,7 @@
 </header>
 <main class="col-lg-12 col-md-12 col-sm-12 col-xs-12 albums" style="padding: 0px;">
 
-
     <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 songslist">ALBUMS</p>
-
     <div class="col-lg-3 songs" style="padding:0px">
         <button type="submit" class="albumam albumbutton"  name="am">AM </button>
         <br>
@@ -41,15 +39,13 @@
         <br>
         <button type="submit" class="albumworst albumbutton" name="worst">FAVOURITE WORST NIGHTMARE </button>
         <br>
-        <button type="submit" class="albumpeople albumbutton " name="people">WHATEVER PEOPLE SAY I AM,THAT'S WHAT I'M <br> NOT </button>
-
+        <button type="submit" class="albumpeople albumbutton " name="people">WHATEVER PEOPLE SAY I AM,THAT'S WHAT I'M <br><span class="pull-left">NOT</span> </button>
     </div>
-
 
     <div class="col-lg-5">
 
         <p class="songlist songlistam albumheading">AM (2013)</p>
-        <img src="images/am.png" class="songlist songlistam img-responsive suck pull-right">
+        <img src="images/am.png" class="songlist songlistam img-responsive suck am pull-right">
         <?php $albums = $model->get_songs('AM') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlist songlistam"><?= $item['songs'] ?>
@@ -164,16 +160,10 @@
         <p class="songlistsee songlist "><?= $item['songs'] ?>
         <p>
             <?php } ?>
-
-
     </div>
 
 </main>
-<!--    <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer" style="padding:0px;">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer" style="padding:0px" ;>
-            <p class="copy">&copy Arctic Monkeys fan page</p>
-        </div>
-    </footer>-->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="/js/vendor/custom.js" type="text/javascript"></script>
 </body>

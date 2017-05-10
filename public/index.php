@@ -35,8 +35,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $model = new Model($db);
         $comments = $model->get_comments();
         $member = $model->get_member_by_name('');
-        //$albums = $model->get_songs('');
-
+        $count = $model->count_comments();
         $comment = new \App\Controllers\Controllers($db);
         $comment->insert_comment();
 
