@@ -51,60 +51,6 @@ h1 {
 
 }
 
-.am {
-
-    background-image: url("../images/am.png");
-    height: 700px;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.suck {
-
-    background-image: url("../images/suckit.png");
-    height: 700px;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.humbug {
-
-    background-image: url("../images/humbug1.png");
-    height: 700px;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.worst {
-
-    background-image: url("../images/worst.png");
-    height: 700px;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.people {
-
-    background-image: url("../images/people.png");
-    height: 700px;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .comment {
     background-image: url("../images/bild2.png");
@@ -116,15 +62,7 @@ h1 {
     background-size: cover;
 }
 
-.albums {
-    background-image: url("../images/back4.jpg");
-    height: 800px;
 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .btn-primary {
     color: #fff;
@@ -184,6 +122,7 @@ h5 {
     /*border-bottom: 1px solid lightgrey;*/
     font-size: 20px;
     font-weight: bold;
+    color:white;
 }
 
 .commentname {
@@ -314,13 +253,20 @@ hr {
     font-weight: bold;
     line-height: 0.9;
 }
-#songs{
+.songslist{
     margin-top:50px;
     color:white;
     border-top:4px solid white;
-    font-size:30px;
+    font-size:20px;
     font-weight: bold;
 
+}
+
+.singles{
+    margin-top:50px;
+    color:white;
+    font-size:20px;
+    font-weight: bold;
 }
 .albumbutton{
     background:none;
@@ -328,9 +274,15 @@ hr {
     margin:0;
     padding:0;
     color:white;
+    font-size: 14px;
+    text-decoration: none;
 }
-ul{
-    list-style-type: none;
+.albumbutton:hover{
+    color:grey;
+}
+
+.albumbutton:focus{
+    outline:0;
 }
 
 #homealbums{
@@ -338,9 +290,10 @@ ul{
 }
 .songlist{
     color:white;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 0.9;
     display:none;
+
 }
 
 .cd{
@@ -358,4 +311,28 @@ ul{
 }
 .editdate{
     color:black;
+}
+
+.admincomment{
+    color:red;
+}
+.songs{
+    border-top:1px solid grey;
+    margin-left:15px;
+    margin-top:20px;
+
+}
+.suck{
+    width:200px;
+}
+.albumheading{
+
+    margin-top:17px;
+    font-size:30px;
+}
+.first{
+    margin-bottom:250px;
+}
+.albums{
+    height:800px;
 }

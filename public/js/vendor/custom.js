@@ -55,3 +55,33 @@
      });
 
  });
+ $(document).ready(function(){
+     $(".albumhigh").click(function(){
+         $(".songlisthigh").toggle();
+     });
+
+ });
+ $(document).ready(function(){
+     $(".albumknow").click(function(){
+         $(".songlistknow").toggle();
+     });
+
+ });
+ $(document).ready(function(){
+     $(".albummine").click(function(){
+         $(".songlistmine").toggle();
+     });
+
+ });
+ $(document).ready(function(){
+     $(".albumblack").click(function(){
+         $(".songlistblack").toggle();
+     });
+
+ });
+ $(document).ready(function(){
+     $(".albumsee").click(function(){
+         $(".songlistsee").toggle();
+     });
+
+ });

@@ -66,7 +66,7 @@
 
         <form action="#" method="POST" class="form-inline" id="fans">
             <p class="formedit">Name:</p>
-            <input type="text" name="fname" class="form-control">
+            <input type="text" name="fname" class="form-control admincomment" value="<?php echo $_SESSION['user_id'] ?>">
             <br>
             <p class="formedit formcomment">Comment:</p>
             <textarea class="form-control textcomment" cols="25" rows="4" name="comment"></textarea>
@@ -79,7 +79,7 @@
         <div class="bordercomments editcomment col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-1 col-md-1"></div>
             <div class="col-lg-9 col-md-9">
-                <p class="fieldcomment">Comments</p>
+                <p class="">Comments</p>
                 <?php foreach ($comments as $item) { ?>
                 <h6 id='date editdate'><?= $item['date'] ?>
                     <h6>
@@ -92,7 +92,7 @@
                         </form>
 
                         <p class='commentname editcommentanme'><?= $item['fname'] ?>: </p>
-                        <p class='comments editcomments'><?= $item['comment'] ?></p><br>
+                        <p class='comments editcomments  '><?= $item['comment'] ?></p><br>
 
                         <?php } ?>
 
