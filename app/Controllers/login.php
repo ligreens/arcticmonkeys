@@ -19,25 +19,24 @@ class Login
 
     function login()
     {
-        session_start();
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        if (!empty($_POST['user']) && !empty($_POST['password']) && isset($_POST['login'])) {
             $user = $_POST['user'];
             $password = $_POST['password'];
+            $sql = "SELECT  id, `user`, password, salt FROM admin WHERE `user` = :user";
+            $row = $this->db->prepare($sql);
+            $row->execute(['user' => $user]);
+            $rows = $row->fetchAll(\PDO::FETCH_ASSOC);
+            if (count($rows) > 0) {
+                $crypt_password = crypt($password, $rows[0]['salt']);
+                if ($crypt_password == $rows[0]['password']) {
+                    $_SESSION['user_id'] = $rows[0]['user'];
+                    $_SESSION['logged_in'] = $_POST['user'];
 
-            $sql = ("SELECT * FROM admin WHERE user = :name");
-            $stm = $this->db->prepare($sql);
-            $stm->execute(['name' => $user]);
-            $stmt = $stm->fetchAll(\PDO::FETCH_ASSOC);
-            if ($stm->rowCount() > 0) {
-                $main = array('data' => $stmt);
-                $crypt_password = crypt($password, $stmt[0]['salt']);
+                }
             }
-            if ($crypt_password = crypt($password, $stmt[0]['salt'])) {
-                $_SESSION['userid'] = $stmt[0]['id'];
-            } else {
-                echo 'noope';
-            }
+
         }
-    }
 
+    }
 }

@@ -7,6 +7,7 @@ Use App\Database;
 class Controllers
 {
 
+
     /**
      * @var Database
      */
@@ -49,10 +50,11 @@ class Controllers
 
     function add_concert()
     {
+        session_start();
         if (!empty($_POST['city']) && !empty($_POST['date']) && isset($_POST['add'])) {
-            $sql = "INSERT INTO `concert` (`city`, `date`) VALUES(:city, :dat)";
+            $sql = "INSERT INTO `concert` (`city`, `date`, `user_id`) VALUES(:city, :date, :user)";
             $stm = $this->db->prepare($sql);
-            $stm->execute(['city' => $_POST['city'], 'dat' => $_POST['date']]);
+            $stm->execute(['city' => $_POST['city'], 'date' => $_POST['date'], 'user' => $_SESSION['user_id']]);
         }
     }
 
@@ -89,4 +91,13 @@ class Controllers
             exit;
         }
     }
+
+    function logout()
+    {
+        if (isset($_POST['logout'])) {
+            session_destroy();
+            header('Refresh: 1admin.login.php');
+        }
+    }
+
 }

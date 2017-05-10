@@ -50,9 +50,10 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         break;
 
     case '/admin':
-
+        $admin = new \App\Controllers\Admin($db);
+        $admin->add_admin();
         $login = new \App\Controllers\Login($db);
-        $login->login();
+        //  $login->login();
 
         require $baseDir . '/views/admin.login.php';
         break;
@@ -74,11 +75,14 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $controller->update_concert();
         $concert = $model->get_concerts();
         $delete = $controller->delete_concerts();
-        $login = new App\Controllers\Controllers($db);
-
-        //$login->failed_to_login();
+        $nologin = new App\Controllers\Controllers($db);
+        $login = new \App\Controllers\Login($db);
+        $login->login();
+        $nologin->failed_to_login();
+        $nologin->logout();
         require $baseDir . '/views/edit.php';
         break;
+
     default:
         header('HTTP/1.0 404 Not Found');
         echo 'Page not found';

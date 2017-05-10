@@ -340,7 +340,22 @@ ul{
     color:white;
     font-size: 10px;
     line-height: 0.9;
+    display:none;
 }
+
 .cd{
     text-decoration: underline;
+}
+.editcomment{
+    background-color: lightgrey;
+    color:black;
+}
+.editcomments{
+    color:black;
+}
+.editcommentanme{
+    color:black
+}
+.editdate{
+    color:black;
 }

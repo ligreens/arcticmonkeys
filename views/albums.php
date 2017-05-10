@@ -31,30 +31,49 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding:0px;">
 
 
-      <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right" id="songs" >ALBUMS</p>
+      <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right b" id="songs" >ALBUMS</p>
 
-       <form action="" method="post">
         <ul>
-            <li><button type="submit" class="albumbutton" name="am"><p class="cd">AM</p></button>
+            <li><button type="submit" class="albumam albumbutton" name="am">AM</button>
                 <?php $albums = $model->get_songs('AM') ?>
             <?php foreach ($albums as $item) { ?>
-            <p class="songlist"><?= $item['songs'] ?><p>
+            <p class="songlist songlistam"><?= $item['songs'] ?><p>
                 <?php } ?>
 
 
             </li>
-            <li><button type="submit" class="albumbutton" name="suck">SUCK IT AND SEE</button>
+            <li><button type="submit" class="albumsuck albumbutton" name="suck">SUCK IT AND SEE</button>
 
                 <?php $albums = $model->get_songs('Suck It and See') ?>
                 <?php foreach ($albums as $item) { ?>
-                <p class="songlist"><?= $item['songs'] ?><p>
+                <p class="songlist songlistsuck"><?= $item['songs'] ?><p>
                     <?php } ?>
             </li>
-            <li><button type="submit" class="albumbutton" name="humbug">HUMBUG</button></li>
-            <li><button type="submit" class="albumbutton" name="worst">FAVOURITE WORST NIGHTMARE</button></li>
-            <li><button type="submit" class="albumbutton" name="people">WHATEVER PEOPLE SAY I AM, THAT'S WHAT I'M NOT</button></li>
+            <li><button type="submit" class="albumhumbug albumbutton" name="humbug">HUMBUG</button>
+
+                <?php $albums = $model->get_songs('Humbug') ?>
+                <?php foreach ($albums as $item) { ?>
+                <p class="songlist songlisthumbug"><?= $item['songs'] ?><p>
+                    <?php } ?>
+
+            </li>
+            <li><button type="submit" class="albumworst albumbutton" name="worst">FAVOURITE WORST NIGHTMARE</button>
+
+                <?php $albums = $model->get_songs('Favourite worst nightmare') ?>
+                <?php foreach ($albums as $item) { ?>
+                <p class="songlistworst songlist"><?= $item['songs'] ?><p>
+                    <?php } ?>
+
+            </li>
+            <li><button type="submit" class="albumpeople albumbutton" name="people">WHATEVER PEOPLE SAY I AM, THAT'S WHAT I'M NOT</button>
+
+                <?php $albums = $model->get_songs('Whatever People Say I Am, That\'s What I\'m Not') ?>
+                <?php foreach ($albums as $item) { ?>
+                <p class="songlistpeople songlist"><?= $item['songs'] ?><p>
+                    <?php } ?>
+
+            </li>
         </ul>
-       </form>
 
 </div>
 </div>

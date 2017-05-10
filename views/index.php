@@ -80,8 +80,8 @@
 
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment">
-            <p class="fans addcomment">ADD A COMMENT</p>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment"style="padding: 0;">
+            <p class=" addcomment">ADD A COMMENT</p>
 
 
             <?php $comment->insert_comment(); ?>

@@ -14,7 +14,8 @@
 
 </head>
 <body class="edit">
-<form>
+<h1 class="col-lg-12">Welcome <?php echo $_SESSION['user_id'] ?> </h1>
+<form action="#" method="post">
     <button type="submit" name="logout" class="pull-right ">Log out</button>
 </form>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -33,7 +34,7 @@
 
     <?php foreach ($concert as $item) { ?>
         <div class="concerts col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <h3 id='date'><?= $item['city'] . " " . $item['date'] ?>
+            <h3><?= $item['city'] . " " . $item['date'] ?>
                 <h3>
                     <?php $controller->delete_concerts(); ?>
 
@@ -75,12 +76,12 @@
         </form>
 
         <br>
-        <div class="bordercomments col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="bordercomments editcomment col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-1 col-md-1"></div>
             <div class="col-lg-9 col-md-9">
                 <p class="fieldcomment">Comments</p>
                 <?php foreach ($comments as $item) { ?>
-                <h6 id='date'><?= $item['date'] ?>
+                <h6 id='date editdate'><?= $item['date'] ?>
                     <h6>
 
                         <form action="#" method="POST">
@@ -90,8 +91,8 @@
                             </button>
                         </form>
 
-                        <p class='commentname'><?= $item['fname'] ?>: </p>
-                        <p class='comments'><?= $item['comment'] ?></p><br>
+                        <p class='commentname editcommentanme'><?= $item['fname'] ?>: </p>
+                        <p class='comments editcomments'><?= $item['comment'] ?></p><br>
 
                         <?php } ?>
 
