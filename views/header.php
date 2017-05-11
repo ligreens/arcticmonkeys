@@ -17,7 +17,7 @@
         <div class="row pull-right menurow" style="margin:3px;">
             <a href="/" class=" menu home"> HOME</a>
             <a href="albums" class="menu"> RELEASES</a>
-            <a href="#" class=" menu fansforum ">FANS FORUM</a>
+            <a href="/" class=" menu fansforum ">FANS FORUM</a>
             <a href="concert" class="menu">CONCERTS</a>
         </div>
     </div>
