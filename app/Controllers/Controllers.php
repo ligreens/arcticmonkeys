@@ -73,23 +73,6 @@ class Controllers
             }
         }
     }
-  /*function update_concert($table, $id, $data){
-        $columns = array_keys($data);
-
-        $columns = array_map(function($item){
-            return $item.'='.$item;
-        },$columns);
-
-        $bindingSql = implode(',', $columns);
-        $sql = "UPDATE $table SET ($bindingSql) WHERE id = :id";
-        $stm = $this->db->prepare($sql);
-        $data['id'] = $id;
-        foreach ($data as $key => $value){
-            $stm =bindValue(':' . $key, $value);
-        }
-        $status = $stm->execute();
-        return $status;
-    }*/
 
     function failed_to_login()
     {
