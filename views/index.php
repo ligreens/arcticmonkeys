@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arctic Monkeys</title>
-    <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS -->
-    <link href="/css/custom.css" rel="stylesheet">
-</head>
-<body id="home">
-<header class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header" style="padding: 0;">
-        <hr>
-        <div class="row pull-right menurow" style="margin:3px;">
-            <a href="#" class=" menu home"> HOME</a>
-            <a href="albums" class="menu"> RELEASES</a>
-            <a href="#" class=" menu fansforum ">FANS FORUM</a>
-            <a href="concert" class="menu">CONCERTS</a>
-        </div>
-    </div>
-</header>
+<?php require 'header.php'?>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dive">
-    <main class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main" style="padding: 0;">
+<main class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main" style="padding: 0;">
         <form action="#" method="POST" name="member">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                 <img src="images/img/alex.jpg"
@@ -84,23 +61,15 @@
                             <h6 id='date' class=""><?= $item['date'] ?>
                             </h6>
                             <p class='comments'><?= $item['comment'] ?></p><br>
-
                         </div>
                     <?php } ?>
-
                 </div>
-
                 <div class="col-lg-2 col-md-2"></div>
             </div>
         </div>
     </div>
 </div>
-
-    <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer" style="padding:0px;">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer" style="padding:0px" ;>
-            <p class="copy">Arctic Monkeys fan page</p>
-        </div>
-    </footer>
+<?php require 'footer.php'?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="/js/vendor/custom.js" type="text/javascript"></script>
 </body>

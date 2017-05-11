@@ -7,7 +7,7 @@
 });
 
  $(document).ready(function(){
-     $(".second:nth-child(odd)").css("background-color", "#333333");
+     $(".second:nth-child(even)").css("background-color", "#333333");
  });
 
  $(document).ready(function(){

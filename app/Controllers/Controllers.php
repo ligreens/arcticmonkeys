@@ -22,9 +22,9 @@ class Controllers
     function insert_comment()
     {
         if (!empty($_POST['comment']) && !empty($_POST['fname']) && isset($_POST['send'])) {
-            $sql = "INSERT INTO `comments` (`fname`, `comment`) VALUES(:namn, :comment)";
+            $sql = "INSERT INTO `comments` (`fname`, `comment`, `user_id`) VALUES(:namn, :comment, :user)";
             $stm = $this->db->prepare($sql);
-            $stm->execute(['namn' => $_POST['fname'], 'comment' => $_POST['comment']]);
+            $stm->execute(['namn' => $_POST['fname'], 'comment' => $_POST['comment'],'user' => $_SESSION['user_id']]);
         }
     }
 
@@ -83,7 +83,6 @@ class Controllers
             }
         }
     }
-
     function failed_to_login()
     {
         if (!isset($_SESSION['logged_in'])) {

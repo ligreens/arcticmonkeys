@@ -39,7 +39,7 @@ class Model{
         return $stm->fetchAll();
     }
     public function count_comments(){
-        $sql = $sql = "SELECT COUNT(*) AS total FROM comments";
+        $sql = $sql = "SELECT COUNT(*) AS total FROM comments ";
         $stm = $this->db->prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
