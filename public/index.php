@@ -33,7 +33,7 @@ $controller = new Controller($baseDir);
 $model = new Model($db);
 switch ($path($_SERVER['REQUEST_URI'])) {
     case '/':
-        $comments = $model->get_comments();
+        $comments = $model->get_concerts_comments('comments');
         $member = $model->get_member_by_name('');
         $count = $model->count_comments();
         $comment = new \App\Controllers\Controllers($db);
@@ -41,7 +41,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         require $baseDir . '/views/index.php';
         break;
     case '/concert':
-        $concert = $model->get_concerts();
+        $concert = $model->get_concerts_comments('concert');
         require $baseDir . '/views/concert.php';
         break;
     case '/admin':
@@ -57,12 +57,12 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         require $baseDir . '/views/albums.php';
         break;
     case '/edit':
-        $comments = $model->get_comments();
+        $comments = $model->get_concerts_comments('comments');
         $controller = new \App\Controllers\Controllers($db);
         $controller->delete('comments');
         $controller->add_concert();
         $controller->update_concert();
-        $concert = $model->get_concerts();
+        $concert = $model->get_concerts_comments('concert');
         $delete = $controller->delete('concert');
         $controller->insert('comments');
         $nologin = new App\Controllers\Controllers($db);

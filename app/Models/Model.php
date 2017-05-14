@@ -32,12 +32,12 @@ class Model{
 
     }
 
-    public function get_comments($column = "date", $order_by = "DESC"){
+/*    public function get_comments($column = "date", $order_by = "DESC"){
         $sql = $sql = "SELECT * FROM comments ORDER BY `$column` $order_by";
         $stm = $this->db->prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
-    }
+    }*/
     public function count_comments($column = "comments"){
         $sql = $sql = "SELECT COUNT(*) AS total FROM  `$column`";
         $stm = $this->db->prepare($sql);
@@ -45,8 +45,8 @@ class Model{
         return $stm->fetchAll();
     }
 
-    public function get_concerts($column = "date", $order_by ="ASC"){
-        $sql = "SELECT * FROM concert ORDER BY `$column` $order_by";
+    public function get_concerts_comments($table, $column = "date", $order_by ="ASC"){
+        $sql = "SELECT * FROM " . $table . " ORDER BY `$column` $order_by";
         $stm = $this->db->prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
