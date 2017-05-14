@@ -29,7 +29,7 @@
         <div class="concerts col-lg-6 col-md-6 col-sm-6 col-xs-6">
             <h3><?= $item['city'] . " " . $item['date'] ?>
                 <h3>
-                    <?php $controller->delete_concerts(); ?>
+                    <?php $controller->delete('concert'); ?>
 
                     <form action="#" method="POST" class="form-inline">
                         <p class="concert">City:</p>
@@ -37,7 +37,7 @@
                         <br>
                         <p class="concert">Date:</p>
                         <input type="text" name="date" class="form-control" value="<?php echo $item['date'] ?>">
-                        <button type="submit" name="delete_concerts" class=" delete btn btn-primary"
+                        <button type="submit" name="delete" class=" delete btn btn-primary"
                                 value="<?php echo $item['id'] ?>">Delete
                         </button>
                         <button type="submit" name="update" class=" delete btn btn-primary"
@@ -70,7 +70,7 @@
                 <h6 id='date editdate'><?= $item['date'] ?>
                     <h6>
                         <form action="#" method="POST">
-                            <?php $controller->delete_comments(); ?>
+                            <?php $controller->delete('comments'); ?>
                             <button type="submit" name="delete" class="pull-right delete btn btn-primary"
                                     value="<?php echo $item['id'] ?>">Delete
                             </button>

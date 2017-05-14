@@ -59,11 +59,11 @@ switch ($path($_SERVER['REQUEST_URI'])) {
     case '/edit':
         $comments = $model->get_comments();
         $controller = new \App\Controllers\Controllers($db);
-        $controller->delete_comments();
+        $controller->delete('comments');
         $controller->add_concert();
         $controller->update_concert();
         $concert = $model->get_concerts();
-        $delete = $controller->delete_concerts();
+        $delete = $controller->delete('concert');
         $controller->insert('comments');
         $nologin = new App\Controllers\Controllers($db);
         $login = new \App\Controllers\Login($db);

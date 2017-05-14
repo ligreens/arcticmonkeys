@@ -28,17 +28,17 @@ class Controllers
         }
     }
 
-    function delete_comments()
+    function delete($table)
     {
         if (isset($_POST['delete'])) {
-            $sql = "DELETE FROM `comments` WHERE id = :id";
+            $sql = "DELETE FROM " . $table . " WHERE id = :id";
             $delete_stm = $this->db->prepare($sql);
             $delete_stm->execute(['id' => $_POST['delete']]);
             return $delete_stm;
         }
     }
 
-    function delete_concerts()
+/*    function delete_concerts()
     {
         if (isset($_POST['delete_concerts'])) {
             $sql = "DELETE FROM `concert` WHERE id = :id";
@@ -46,7 +46,7 @@ class Controllers
             $delete_stm->execute(['id' => $_POST['delete_concerts']]);
             return $delete_stm;
         }
-    }
+    }*/
 
     function add_concert()
     {

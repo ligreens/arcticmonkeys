@@ -17,7 +17,7 @@ class Model{
     }
 
     public function get_songs($albums){
-        $sql = "SELECT `songs` FROM songs WHERE albums = :albums";
+        $sql = "SELECT * FROM songs WHERE albums = :albums";
         $stm = $this->db->prepare($sql);
         $stm->execute([':albums' => $albums]);
         return $stm->fetchAll();
