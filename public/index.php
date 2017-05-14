@@ -35,13 +35,14 @@ switch ($path($_SERVER['REQUEST_URI'])) {
     case '/':
         $comments = $model->get_concerts_comments('comments');
         $member = $model->get_member_by_name('');
-        $count = $model->count_comments();
+        $count = $model->count('comments');
         $comment = new \App\Controllers\Controllers($db);
         $comment->insert_comment('comments');
         require $baseDir . '/views/index.php';
         break;
     case '/concert':
         $concert = $model->get_concerts_comments('concert');
+        $count = $model->count('concert');
         require $baseDir . '/views/concert.php';
         break;
     case '/admin':

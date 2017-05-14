@@ -32,14 +32,14 @@ class Model{
 
     }
 
-    public function count_comments($column = "comments"){
-        $sql = $sql = "SELECT COUNT(*) AS total FROM  `$column`";
+    public function count($table ){
+        $sql = $sql = "SELECT COUNT(*) AS total FROM  " . $table ;
         $stm = $this->db->prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
     }
 
-    public function get_concerts_comments($table, $column = "date", $order_by ="ASC"){
+    public function get_concerts_comments($table, $column = "date", $order_by ="DESC"){
         $sql = "SELECT * FROM " . $table . " ORDER BY `$column` $order_by";
         $stm = $this->db->prepare($sql);
         $stm->execute();
