@@ -25,19 +25,13 @@ class Model{
     }
 
     public function get_member_by_name($name) {
-        $sql = "SELECT `name` , `instruments` FROM members where `name` = :name ";
+        $sql = "SELECT * FROM members where `name` = :name ";
         $stm = $this->db->prepare($sql);
         $stm->execute([':name' => $name]);
         return $stm->fetchAll();
 
     }
 
-/*    public function get_comments($column = "date", $order_by = "DESC"){
-        $sql = $sql = "SELECT * FROM comments ORDER BY `$column` $order_by";
-        $stm = $this->db->prepare($sql);
-        $stm->execute();
-        return $stm->fetchAll();
-    }*/
     public function count_comments($column = "comments"){
         $sql = $sql = "SELECT COUNT(*) AS total FROM  `$column`";
         $stm = $this->db->prepare($sql);

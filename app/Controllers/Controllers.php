@@ -19,7 +19,7 @@ class Controllers
         $this->db = $db;
     }
 
-    function insert($table)
+    function insert_comment($table)
     {
         if (!empty($_POST['comment']) && !empty($_POST['fname']) && isset($_POST['send'])) {
             $sql = "INSERT INTO " . $table . " (`fname`, `comment`) VALUES(:namn, :comment)";
@@ -38,16 +38,6 @@ class Controllers
         }
     }
 
-/*    function delete_concerts()
-    {
-        if (isset($_POST['delete_concerts'])) {
-            $sql = "DELETE FROM `concert` WHERE id = :id";
-            $delete_stm = $this->db->prepare($sql);
-            $delete_stm->execute(['id' => $_POST['delete_concerts']]);
-            return $delete_stm;
-        }
-    }*/
-
     function add_concert()
     {
         session_start();
@@ -58,24 +48,14 @@ class Controllers
         }
     }
 
-    function get_album($album)
-    {
-        if (isset($_POST['am'])) {
-            $sql = "SELECT `songs` FROM songs WHERE albums = :album";
-            $stm = $this->db->prepare($sql);
-            $stm->execute(['album' => $album]);
-            return $stm->fetchAll();
-        }
-    }
-
-    function update_concert()
+    function update_concert($table)
     {
         if (isset($_POST['update'])) {
             $fields = ['city', 'date'];
             foreach ($fields as $field) {
 
                 if (isset($_POST[$field]) && strlen($_POST[$field]) > 0) {
-                    $sql = ("UPDATE `concert` SET `{$field}` = :{$field} WHERE `id`= :id");
+                    $sql = ("UPDATE " . $table . " SET `{$field}` = :{$field} WHERE `id`= :id");
                     $stm = $this->db->prepare($sql);
                     $stm->execute(["{$field}" => $_POST[$field], 'id' => $_POST['update']]);
                 }
@@ -83,24 +63,6 @@ class Controllers
             }
         }
     }
-  /*function update_concert($table, $id, $data){
-        $columns = array_keys($data);
-
-        $columns = array_map(function($item){
-            return $item.'='.$item;
-        },$columns);
-
-        $bindingSql = implode(',', $columns);
-        $sql = "UPDATE $table SET ($bindingSql) WHERE id = :id";
-        $stm = $this->db->prepare($sql);
-        $data['id'] = $id;
-        foreach ($data as $key => $value){
-            $stm =bindValue(':' . $key, $value);
-        }
-        $status = $stm->execute();
-        return $status;
-    }*/
-
     function failed_to_login()
     {
         if (!isset($_SESSION['logged_in'])) {
