@@ -60,7 +60,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $comments = $model->get_concerts_comments('comments');
         $controller = new \App\Controllers\Controllers($db);
         $controller->delete('comments');
-        $controller->add_concert();
+        $controller->add_concert('concert');
         $controller->update_concert('concert');
         $concert = $model->get_concerts_comments('concert');
         $delete = $controller->delete('concert');

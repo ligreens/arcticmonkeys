@@ -38,11 +38,11 @@ class Controllers
         }
     }
 
-    function add_concert()
+    function add_concert($table)
     {
         session_start();
         if (!empty($_POST['city']) && !empty($_POST['date']) && isset($_POST['add'])) {
-            $sql = "INSERT INTO `concert` (`city`, `date`, `user_id`) VALUES(:city, :date, :user)";
+            $sql = "INSERT INTO  " . $table . " (`city`, `date`, `user_id`) VALUES(:city, :date, :user)";
             $stm = $this->db->prepare($sql);
             $stm->execute(['city' => $_POST['city'], 'date' => $_POST['date'], 'user' => $_SESSION['user_id']]);
         }
