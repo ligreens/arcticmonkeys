@@ -24,10 +24,10 @@ class Admin
     }
 
 
-    function add_admin()
+    function add_admin($table)
     {
         if (isset($_POST['create'])) {
-            $sql = "INSERT INTO `admin` (`user`, `password`, `salt`) VALUES(:admin, :password, :salt)";
+            $sql = "INSERT INTO  " . $table . " (`user`, `password`, `salt`) VALUES(:admin, :password, :salt)";
             $salt = mt_rand_str(31);
             $stm = $this->db->prepare($sql);
             $stm->execute(['admin' => $_POST['admin'], 'password' => crypt($_POST['password'], $salt), 'salt' => $salt]);

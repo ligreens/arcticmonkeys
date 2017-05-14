@@ -33,7 +33,7 @@ $controller = new Controller($baseDir);
 $model = new Model($db);
 switch ($path($_SERVER['REQUEST_URI'])) {
     case '/':
-        $comments = $model->get_concerts_comments('comments');
+        $comments = $model->get_comments('comments');
         $member = $model->get_songs_member('members', 'name','');
         $count = $model->count('comments');
         $comment = new \App\Controllers\Controllers($db);
@@ -41,13 +41,13 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         require $baseDir . '/views/index.php';
         break;
     case '/concert':
-        $concert = $model->get_concerts_comments('concert');
+        $concert = $model->get_all('concert');
         $count = $model->count('concert');
         require $baseDir . '/views/concert.php';
         break;
     case '/admin':
         $admin = new \App\Controllers\Admin($db);
-        $admin->add_admin();
+        $admin->add_admin('admin');
         $login = new \App\Controllers\Login($db);
         require $baseDir . '/views/admin.login.php';
         break;
@@ -57,12 +57,12 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         require $baseDir . '/views/albums.php';
         break;
     case '/edit':
-        $comments = $model->get_concerts_comments('comments');
+        $comments = $model->get_comments('comments');
         $controller = new \App\Controllers\Controllers($db);
         $controller->delete('comments');
         $controller->add_concert('concert');
         $controller->update_concert('concert');
-        $concert = $model->get_concerts_comments('concert');
+        $concert = $model->get_all('concert');
         $delete = $controller->delete('concert');
         $controller->insert_comment('comments');
         $nologin = new App\Controllers\Controllers($db);

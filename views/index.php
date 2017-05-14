@@ -53,7 +53,7 @@
                 <div class="col-lg-9 col-md-9">
                     <?php $count = $model->count('comments'); ?>
                     <?php foreach ($count as $item) { ?>
-                        <p class="fieldcomment">COMMENT(<?= $item['total'] ?>)</p>
+                        <p class="fieldcomment">COMMENTS(<?= $item['total'] ?>)</p>
                     <?php } ?>
                     <?php foreach ($comments as $item) { ?>
                         <div class="second">
