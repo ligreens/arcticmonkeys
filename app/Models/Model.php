@@ -23,15 +23,7 @@ class Model{
         return $stm->fetchAll();
 
     }
-
-/*    public function get_member_by_name($name) {
-        $sql = "SELECT * FROM members where `name` = :name ";
-        $stm = $this->db->prepare($sql);
-        $stm->execute([':name' => $name]);
-        return $stm->fetchAll();
-
-    }*/
-
+    
     public function count($table ){
         $sql = $sql = "SELECT COUNT(*) AS total FROM  " . $table ;
         $stm = $this->db->prepare($sql);
