@@ -23,7 +23,7 @@ class Model{
         return $stm->fetchAll();
 
     }
-    
+
     public function count($table ){
         $sql = $sql = "SELECT COUNT(*) AS total FROM  " . $table ;
         $stm = $this->db->prepare($sql);

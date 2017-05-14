@@ -52,7 +52,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         require $baseDir . '/views/admin.login.php';
         break;
     case '/albums':
-        $albums = $model->get_songs_member('songs', 'songs', '');
+        $albums = $model->get_songs_member('songs', 'albums', '');
         $get_albums = new \App\Controllers\Controllers($db);
         require $baseDir . '/views/albums.php';
         break;
