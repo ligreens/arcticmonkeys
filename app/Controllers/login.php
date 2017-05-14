@@ -17,13 +17,13 @@ class Login
         $this->db = $db;
     }
 
-    function login()
+    function login($table)
     {
 
         if (!empty($_POST['user']) && !empty($_POST['password']) && isset($_POST['login'])) {
             $user = $_POST['user'];
             $password = $_POST['password'];
-            $sql = "SELECT  id, `user`, password, salt FROM admin WHERE `user` = :user";
+            $sql = "SELECT  * FROM " . $table . " WHERE `user` = :user";
             $row = $this->db->prepare($sql);
             $row->execute(['user' => $user]);
             $rows = $row->fetchAll(\PDO::FETCH_ASSOC);

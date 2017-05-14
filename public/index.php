@@ -67,7 +67,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $controller->insert_comment('comments');
         $nologin = new App\Controllers\Controllers($db);
         $login = new \App\Controllers\Login($db);
-        $login->login();
+        $login->login('admin');
         $nologin->failed_to_login();
         $nologin->logout();
         require $baseDir . '/views/edit.php';
