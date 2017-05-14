@@ -16,21 +16,21 @@ class Model{
         $this->db = $db;
     }
 
-    public function get_songs($albums){
-        $sql = "SELECT * FROM songs WHERE albums = :albums";
+    public function get_songs_member($table, $column, $value){
+        $sql = "SELECT * FROM " . $table . " WHERE " . $column . " = :value";
         $stm = $this->db->prepare($sql);
-        $stm->execute([':albums' => $albums]);
+        $stm->execute([':value' => $value]);
         return $stm->fetchAll();
 
     }
 
-    public function get_member_by_name($name) {
+/*    public function get_member_by_name($name) {
         $sql = "SELECT * FROM members where `name` = :name ";
         $stm = $this->db->prepare($sql);
         $stm->execute([':name' => $name]);
         return $stm->fetchAll();
 
-    }
+    }*/
 
     public function count($table ){
         $sql = $sql = "SELECT COUNT(*) AS total FROM  " . $table ;

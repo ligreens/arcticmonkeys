@@ -5,14 +5,14 @@
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                 <img src="images/img/alex.jpg"
                      class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12 alex">
-                <?php $member = $model->get_member_by_name("Alex Turner"); ?>
+                <?php $member = $model->get_songs_member("members", 'name', 'Alex Turner'); ?>
                 <?php foreach ($member as $item) { ?>
                     <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments'] ?></h4>
                 <?php } ?>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 matt">
                 <img src="images/img/matt.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <?php $member = $model->get_member_by_name("Matthew Helders"); ?>
+                <?php $member = $model->get_songs_member("members", 'name', "Matthew Helders"); ?>
                 <?php foreach ($member as $item) { ?>
                     <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments'] ?></h4>
                 <?php } ?>
@@ -20,14 +20,14 @@
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                 <img src="images/img/jamie.jpg"
                      class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <?php $member = $model->get_member_by_name("Jamie Cook"); ?>
+                <?php $member = $model->get_songs_member("members", 'name', "Jamie Cook"); ?>
                 <?php foreach ($member as $item) { ?>
                     <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments'] ?></h4>
                 <?php } ?>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                 <img src="images/img/nick.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <?php $member = $model->get_member_by_name("Nick O'Malley"); ?>
+                <?php $member = $model->get_songs_member("members", 'name', "Nick O'Malley"); ?>
                 <?php foreach ($member as $item) { ?>
                     <h4><?= $name = $item['name'] . ", " . $instrument = $item['instruments'] ?></h4>
                 <?php } ?>

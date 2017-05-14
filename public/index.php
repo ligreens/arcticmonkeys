@@ -34,7 +34,7 @@ $model = new Model($db);
 switch ($path($_SERVER['REQUEST_URI'])) {
     case '/':
         $comments = $model->get_concerts_comments('comments');
-        $member = $model->get_member_by_name('');
+        $member = $model->get_songs_member('members', 'name','');
         $count = $model->count('comments');
         $comment = new \App\Controllers\Controllers($db);
         $comment->insert_comment('comments');
@@ -52,7 +52,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         require $baseDir . '/views/admin.login.php';
         break;
     case '/albums':
-        $albums = $model->get_songs('');
+        $albums = $model->get_songs_member('songs', 'songs', '');
         $get_albums = new \App\Controllers\Controllers($db);
         require $baseDir . '/views/albums.php';
         break;

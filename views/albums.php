@@ -16,35 +16,35 @@
     <div class="col-lg-5">
         <p class="songlist songlistam albumheading">AM (2013)</p>
         <img src="images/am.png" class="songlist songlistam img-responsive suck am pull-right">
-        <?php $albums = $model->get_songs('AM') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums', 'AM') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlist songlistam"><?= $item['songs'] ?>
         <p>
             <?php } ?>
         <p class="songlist songlistsuck albumheading">SUCK IT AND SEE (2011)</p>
         <img src="images/suckit.png" class="songlist songlistsuck img-responsive suck pull-right">
-        <?php $albums = $model->get_songs('Suck It and See') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','Suck It and See') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlist songlistsuck"><?= $item['songs'] ?>
         <p>
             <?php } ?>
         <p class="songlist songlisthumbug albumheading">HUMBUG (2009)</p>
         <img src="images/humbug1.png" class="songlist songlisthumbug img-responsive suck pull-right">
-        <?php $albums = $model->get_songs('Humbug') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','Humbug') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlist songlisthumbug"><?= $item['songs'] ?>
         <p>
             <?php } ?>
         <p class="songlist songlistworst albumheading">FAVOURITE WORST NIGHTMARE (2007)</p>
         <img src="images/worst.png" class="songlist songlistworst img-responsive suck pull-right">
-        <?php $albums = $model->get_songs('Favourite worst nightmare') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','Favourite worst nightmare') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlistworst songlist"><?= $item['songs'] ?>
         <p>
             <?php } ?>
         <p class="songlist songlistpeople albumheading"> WHATEVER PEOPLE SAY I AM, THAT'S WHAT I'M NOT (2006)</p>
         <img src="images/people.png" class="songlist songlistpeople img-responsive suck pull-right">
-        <?php $albums = $model->get_songs('Whatever People Say I Am, That\'s What I\'m Not') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','Whatever People Say I Am, That\'s What I\'m Not') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlistpeople songlist"><?= $item['songs'] ?><p>
             <?php } ?>
@@ -73,31 +73,31 @@
     </div>
     <div class="col-lg-5">
         <p class="songlist songlisthigh albumheading ">WHY'D YOU ONLY CALL ME WHEN YOU'RE HIGH? (2013)</p>
-        <?php $albums = $model->get_songs('Why\'d You Only Call Me When You\'re High?') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','Why\'d You Only Call Me When You\'re High?') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlisthigh songlist "><?= $item['songs'] ?>
         <p>
             <?php } ?>
         <p class="songlist songlistknow albumheading">DO I WANNA KNOW?(2013)</p>
-        <?php $albums = $model->get_songs('Do I Wanna Know?') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','Do I Wanna Know?') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlistknow songlist "><?= $item['songs'] ?>
         <p>
             <?php } ?>
         <p class="songlist songlistmine albumheading">R U MINE? (2012)</p>
-        <?php $albums = $model->get_songs('R U Mine?') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','R U Mine?') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlistmine songlist "><?= $item['songs'] ?>
         <p>
             <?php } ?>
         <p class="songlist songlistblack albumheading">BLACK TREACLE (2012)</p>
-        <?php $albums = $model->get_songs('Black Treacle') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','Black Treacle') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlistblack songlist "><?= $item['songs'] ?>
         <p>
             <?php } ?>
         <p class="songlist songlistsee albumheading">SUCK IT AND SEE (2011)</p>
-        <?php $albums = $model->get_songs('Suck it and see(2011)') ?>
+        <?php $albums = $model->get_songs_member("songs", 'albums','Suck it and see(2011)') ?>
         <?php foreach ($albums as $item) { ?>
         <p class="songlistsee songlist "><?= $item['songs'] ?>
         <p>
