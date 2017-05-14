@@ -37,7 +37,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $member = $model->get_member_by_name('');
         $count = $model->count_comments();
         $comment = new \App\Controllers\Controllers($db);
-        $comment->insert_comment();
+        $comment->insert('comments');
         require $baseDir . '/views/index.php';
         break;
     case '/concert':
@@ -52,8 +52,8 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         break;
     case '/albums':
         $albums = $model->get_songs('');
-        //$get_albums = new \App\Controllers\Controllers($db);
-        //$get_albums->get_album('');
+        $get_albums = new \App\Controllers\Controllers($db);
+        $get_albums->get_album('');
         require $baseDir . '/views/albums.php';
         break;
     case '/edit':
@@ -64,7 +64,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         $controller->update_concert();
         $concert = $model->get_concerts();
         $delete = $controller->delete_concerts();
-        $controller->insert_comment();
+        $controller->insert('comments');
         $nologin = new App\Controllers\Controllers($db);
         $login = new \App\Controllers\Login($db);
         $login->login();

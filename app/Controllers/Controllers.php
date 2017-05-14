@@ -19,10 +19,10 @@ class Controllers
         $this->db = $db;
     }
 
-    function insert_comment()
+    function insert($table)
     {
         if (!empty($_POST['comment']) && !empty($_POST['fname']) && isset($_POST['send'])) {
-            $sql = "INSERT INTO `comments` (`fname`, `comment`) VALUES(:namn, :comment)";
+            $sql = "INSERT INTO " . $table . " (`fname`, `comment`) VALUES(:namn, :comment)";
             $stm = $this->db->prepare($sql);
             $stm->execute(['namn' => $_POST['fname'], 'comment' => $_POST['comment']]);
         }
@@ -58,6 +58,16 @@ class Controllers
         }
     }
 
+    function get_album($album)
+    {
+        if (isset($_POST['am'])) {
+            $sql = "SELECT `songs` FROM songs WHERE albums = :album";
+            $stm = $this->db->prepare($sql);
+            $stm->execute(['album' => $album]);
+            return $stm->fetchAll();
+        }
+    }
+
     function update_concert()
     {
         if (isset($_POST['update'])) {
@@ -73,6 +83,23 @@ class Controllers
             }
         }
     }
+  /*function update_concert($table, $id, $data){
+        $columns = array_keys($data);
+
+        $columns = array_map(function($item){
+            return $item.'='.$item;
+        },$columns);
+
+        $bindingSql = implode(',', $columns);
+        $sql = "UPDATE $table SET ($bindingSql) WHERE id = :id";
+        $stm = $this->db->prepare($sql);
+        $data['id'] = $id;
+        foreach ($data as $key => $value){
+            $stm =bindValue(':' . $key, $value);
+        }
+        $status = $stm->execute();
+        return $status;
+    }*/
 
     function failed_to_login()
     {
