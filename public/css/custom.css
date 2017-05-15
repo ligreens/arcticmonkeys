@@ -1,18 +1,37 @@
-
+/* headings */
 h1 {
     margin-left: 10px;
 }
 
-.main {
-    margin-top: 40px;
-    margin-bottom: 100px;
-
+h4 {
+    text-align: center;
+    color: white;
 }
 
-.alex {
-    padding-botton: 20px;
+h5 {
+
+    color: black;
 }
 
+h2 {
+    text-align: center;
+}
+
+.albumheading {
+
+    margin-top: 17px;
+    font-size: 30px;
+}
+#concertheading {
+    margin-bottom: 30px;
+    margin-top: 15px;
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+/* end headings */
+
+/* Backgrounds */
 
 .header {
 
@@ -38,13 +57,22 @@ h1 {
 
 }
 
-
 .comment {
-background-color: black;
+    background-color: black;
 }
 
+/* End backgrounds */
+.main {
+    margin-top: 40px;
+    margin-bottom: 100px;
 
+}
 
+.alex {
+    padding-botton: 20px;
+}
+
+/* Buttons */
 .btn-primary {
     border: none;
     color: #000;
@@ -58,106 +86,10 @@ background-color: black;
     background-color: darkgrey;
 }
 
-.formfield {
-    color: white;
-    margin-top: 20px;
-}
-
-.formcomment {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-
-h4 {
-    text-align: center;
-    color: white;
-}
-
-h5 {
-
-    color: black;
-}
-
-.bordercomments {
-    padding-top: 20px;
-    width: 500px;
-    height: 400px;
-    overflow: auto;
-    background-color: black;
-}
-
-
-.footer {
-    font-style: italic;
-    text-align: center;
-    color: white;
-    background-color: black;
-    font-size: 10px;
-}
-
-.fieldcomment {
-    padding-bottom: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    color:white;
-    border-bottom:1px solid white;
-}
-
-.commentname {
-    font-weight: bold;
-    color: white;
-    font-size: 15px;
-}
-
-.comments {
-    font-size: 13px;
-    color:white;
-}
-
-#date {
-    margin-top: -7px;
-
-    color:white;
-}
-
-h2 {
-    text-align: center;
-}
-
-.album {
-    color: grey;
-    text-align: center;
-}
-
-.cdcover {
-    background-color: black;
-}
-
-.cdcov {
-    background-color: black;
-}
-
-.copy {
-    color: dimgrey;
-    border-top:1px solid dimgrey;
-    padding-top:5px;
-}
-
+/* menu */
 hr {
     border-top: 3px solid black;
     margin-bottom: -5px;
-}
-
-.menu {
-    font-weight: bold;
-    color: black;
-    padding: 3px 8px 4px 8px;
-    font-size: 12px;
-}
-
-.menurow {
-    margin-top: -20px;
 }
 
 .menu:visited {
@@ -174,10 +106,143 @@ hr {
     text-decoration: none;
 }
 
+.menu {
+    font-weight: bold;
+    color: black;
+    padding: 3px 8px 4px 8px;
+    font-size: 12px;
+}
+
+.menurow {
+    margin-top: -20px;
+}
+
+/* end menu */
+
 .delete {
     padding: 2px 3px 2px 3px;
     font-size: 10px;
     border: none;
+}
+
+.albumbutton {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.albumbutton:hover {
+    color: grey;
+}
+
+.albumbutton:focus {
+    outline: 0;
+}
+
+/* End buttons */
+
+/* Form */
+
+.formfield {
+    color: white;
+    margin-top: 20px;
+}
+
+.formcomment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bordercomments {
+    padding-top: 20px;
+    width: 500px;
+    height: 400px;
+    overflow: auto;
+    background-color: black;
+}
+
+.commentname {
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+.comments {
+    font-size: 13px;
+    color: white;
+}
+
+#date {
+    margin-top: -7px;
+
+    color: white;
+}
+
+.fieldcomment {
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.fans {
+    margin-left: 25px;
+}
+
+.addcomment {
+    font-size: 30px;
+    color: white;
+    border-top: 4px solid white;
+    font-weight: bold;
+
+}
+
+/* End form */
+
+/* Footer */
+
+.footer {
+    font-style: italic;
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-size: 10px;
+}
+
+.copy {
+    color: dimgrey;
+    border-top: 1px solid dimgrey;
+    padding-top: 5px;
+}
+
+/* End footer */
+
+/* Edit page */
+
+.editcomment {
+    background-color: lightgrey;
+    color: black;
+}
+
+.editcomments {
+    color: black;
+}
+
+.editcommentanme {
+    color: black
+}
+
+.editdate {
+    color: black;
+}
+
+.admincomment {
+    color: red;
 }
 
 .formedit {
@@ -188,6 +253,78 @@ hr {
     background-color: ghostwhite;
 }
 
+/* End edit page */
+
+/* Releases page*/
+.album {
+    color: grey;
+    text-align: center;
+}
+
+.cdcover {
+    background-color: black;
+}
+
+.cdcov {
+    background-color: black;
+}
+
+.songslist {
+    margin-top: 50px;
+    color: white;
+    border-top: 4px solid white;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.singles {
+    margin-top: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#homealbums {
+    background-color: black;
+}
+
+.songlist {
+    color: white;
+    font-size: 12px;
+    line-height: 0.9;
+    display: none;
+
+}
+
+.cd {
+    text-decoration: underline;
+}
+
+.songs {
+    border-top: 1px solid grey;
+    margin-left: 15px;
+    margin-top: 20px;
+
+}
+
+.suck {
+    width: 200px;
+}
+
+.albums {
+    background-color: black;
+}
+.releases {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* End releases page*/
+
+/* Concert page*/
 .concert {
     font-size: 15px;
 }
@@ -197,137 +334,41 @@ hr {
     border: 1px solid black;
 }
 
-.concertlist{
-    border-bottom:1px solid lightgrey;
-    padding-bottom:15px;
+.concertlist {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 15px;
     font-size: 15px;
     font-weight: bold;
-    color:black;
-
-}
-#concert{
-    padding-bottom:25px;
-}
-#concertheading{
-    margin-bottom:30px;
-    margin-top:15px;
-    font-size: 25px;
-    margin-left:15px;
-}
-
-.info{
-    margin-top:10px;
-    background-color:#eee8d8;
-    border:none;
-}
-.fans{
-    margin-left:25px;
-}
-.addcomment{
-    font-size: 30px;
-    color:white;
-    border-top:4px solid white;
-    font-weight: bold;
-
-}
-.songslist{
-    margin-top:50px;
-    color:white;
-    border-top:4px solid white;
-    font-size:20px;
-    font-weight: bold;
+    color: black;
 
 }
 
-.singles{
-    margin-top:50px;
-    color:white;
-    font-size:20px;
-    font-weight: bold;
+#concert {
+    padding-bottom: 25px;
 }
-.albumbutton{
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    color:white;
-    font-size: 14px;
-    text-decoration: none;
-}
-.albumbutton:hover{
-    color:grey;
+.info {
+    margin-top: 10px;
+    background-color: #eee8d8;
+    border: none;
 }
 
-.albumbutton:focus{
-    outline:0;
+#concertclick {
+    height: 635px;
 }
 
-#homealbums{
-    background-color:black;
+/* End concert page*/
+
+.first {
+    margin-bottom: 250px;
 }
-.songlist{
-    color:white;
-    font-size: 12px;
-    line-height: 0.9;
-    display:none;
+
+.am {
+    border: 1px solid dimgrey;
+}
+
+.second {
+    padding-top: 8px;
+    padding-left: 8px;
 
 }
 
-.cd{
-    text-decoration: underline;
-}
-.editcomment{
-    background-color: lightgrey;
-    color:black;
-}
-.editcomments{
-    color:black;
-}
-.editcommentanme{
-    color:black
-}
-.editdate{
-    color:black;
-}
-
-.admincomment{
-    color:red;
-}
-.songs{
-    border-top:1px solid grey;
-    margin-left:15px;
-    margin-top:20px;
-
-}
-.suck{
-    width:200px;
-}
-.albumheading{
-
-    margin-top:17px;
-    font-size:30px;
-}
-.first{
-    margin-bottom:250px;
-}
-
-.releases{
-    font-size: 25px;
-    color:white;
-    font-weight: bold;
-    margin-top:10px;
-}
-.am{
-    border:1px solid dimgrey;
-}
-.second{
-    padding-top:8px;
-    padding-left:8px;
-
-}
-.albums{
-    background-color:black;
-}
-#concertclick{
-    height:635px;
-}
