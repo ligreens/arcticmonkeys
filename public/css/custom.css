@@ -17,11 +17,6 @@ h2 {
     text-align: center;
 }
 
-.albumheading {
-
-    margin-top: 17px;
-    font-size: 30px;
-}
 #concertheading {
     margin-bottom: 30px;
     margin-top: 15px;
@@ -295,6 +290,10 @@ hr {
     line-height: 0.9;
     display: none;
 
+}
+.albumheadings {
+    margin-top: 17px;
+    font-size: 30px; 
 }
 
 .cd {
