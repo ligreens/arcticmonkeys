@@ -1,7 +1,5 @@
 
 h1 {
-    z-index: 1;
-    position: absolute;
     margin-left: 10px;
 }
 
@@ -42,13 +40,7 @@ h1 {
 
 
 .comment {
-    background-image: url("../images/back4.jpg");
-    height: 800px;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+background-color: black;
 }
 
 
