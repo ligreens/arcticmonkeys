@@ -9,6 +9,9 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
     <link href="/css/custom.css" rel="stylesheet">
+
+    <link rel="stylesheet/less" type="text/css" href="/css/styles.less" />
+    <script src="/js/less.js" type="text/javascript"></script>
 </head>
 <body id="home">
 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">

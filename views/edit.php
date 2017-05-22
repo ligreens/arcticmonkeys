@@ -85,3 +85,40 @@
 </div>
 <?php require 'footer.php' ?>
 
+
+
+
+
+
+<div class="col-lg-5">
+    <p class="songlist songlisthigh albumheadings ">WHY'D YOU ONLY CALL ME WHEN YOU'RE HIGH? (2013)</p>
+    <?php $albums = $model->get_songs_member("songs", 'albums','Why\'d You Only Call Me When You\'re High?') ?>
+    <?php foreach ($albums as $item) { ?>
+    <p class="songlisthigh songlist "><?= $item['songs'] ?>
+    <p>
+        <?php } ?>
+    <p class="songlist songlistknow albumheadings">DO I WANNA KNOW?(2013)</p>
+    <?php $albums = $model->get_songs_member("songs", 'albums','Do I Wanna Know?') ?>
+    <?php foreach ($albums as $item) { ?>
+    <p class="songlistknow songlist "><?= $item['songs'] ?>
+    <p>
+        <?php } ?>
+    <p class="songlist songlistmine albumheadings">R U MINE? (2012)</p>
+    <?php $albums = $model->get_songs_member("songs", 'albums','R U Mine?') ?>
+    <?php foreach ($albums as $item) { ?>
+    <p class="songlistmine songlist "><?= $item['songs'] ?>
+    <p>
+        <?php } ?>
+    <p class="songlist songlistblack albumheadings">BLACK TREACLE (2012)</p>
+    <?php $albums = $model->get_songs_member("songs", 'albums','Black Treacle') ?>
+    <?php foreach ($albums as $item) { ?>
+    <p class="songlistblack songlist "><?= $item['songs'] ?>
+    <p>
+        <?php } ?>
+    <p class="songlist songlistsee albumheadings">SUCK IT AND SEE (2011)</p>
+    <?php $albums = $model->get_songs_member("songs", 'albums','Suck it and see(2011)') ?>
+    <?php foreach ($albums as $item) { ?>
+    <p class="songlistsee songlist "><?= $item['songs'] ?>
+    <p>
+        <?php } ?>
+</div>

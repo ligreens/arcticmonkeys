@@ -2,46 +2,48 @@
 
 namespace App\Models;
 
-Use App\Database;
+use App\Database;
 
-class Model{
-
-    /**
-     * @var Database
-     */
+abstract class Model
+{
+    protected $id;
     private $db;
+    protected $table = '';
+    protected $column = '';
 
-    public function __construct(Database $db)
+    public function __construct(Database $db, $modelData = [])
     {
         $this->db = $db;
     }
 
-    public function get_songs_member($table, $column, $value){
-        $sql = "SELECT * FROM " . $table . " WHERE " . $column . " = :value";
-        $stm = $this->db->prepare($sql);
-        $stm->execute([':value' => $value]);
-        return $stm->fetchAll();
+// @param integer
 
+    public function getById($id) {
+        return $this->db->getById($this->table, $id);
     }
 
-    public function count($table ){
-        $sql = $sql = "SELECT COUNT(*) AS total FROM  " . $table ;
-        $stm = $this->db->prepare($sql);
-        $stm->execute();
-        return $stm->fetchAll();
+    public function getByValue($value)
+    {
+        return $this->db->getByValue($this->table, $this->column, $value);
     }
 
-    public function get_comments($table, $column = "date", $order_by ="DESC"){
-        $sql = "SELECT * FROM " . $table . " ORDER BY `$column` $order_by";
-        $stm = $this->db->prepare($sql);
-        $stm->execute();
-        return $stm->fetchAll();
-    }
-    public function get_all($table){
-        $sql = "SELECT * FROM " . $table;
-        $stm = $this->db->prepare($sql);
-        $stm->execute();
-        return $stm->fetchAll();
+    public function getAll()
+    {
+        return $this->db->getAll($this->table);
     }
 
+    public function create($data)
+    {
+        return $this->db->create($this->table, $data);
+    }
+
+    public function delete($id)
+    {
+        return $this->db->delete($this->table, $id);
+    }
+
+    public function update($id, $data)
+    {
+        return $this->db->update($this->table, $id, $data);
+    }
 }

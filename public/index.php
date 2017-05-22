@@ -1,16 +1,20 @@
 <?php
 use App\Controllers\Controller;
 use App\Database;
-use App\Models\Model;
+
+use App\Models\CommentsModel;
+use App\Models\ConcertsModel;
+use App\Models\MemberModel;
+use App\Models\SongsModel;
 
 $baseDir = __DIR__ . '/..';
 
 require $baseDir . '/app/database.php';
 require $baseDir . '/app/Models/model.php';
-require $baseDir . '/app/Controllers/Controllers.php';
-require $baseDir . '/app/Controllers/admin.php';
-require $baseDir . '/app/Controllers/login.php';
-
+require $baseDir . '/app/Models/MemberModel.php';
+require $baseDir . '/app/Models/CommentsModel.php';
+require $baseDir . '/app/Models/SongsModel.php';
+require $baseDir . '/app/Models/ConcertsModel.php';
 
 // Ladda in Composers autoload-fil
 require '../vendor/autoload.php';
@@ -18,7 +22,14 @@ require '../vendor/autoload.php';
 // Ladda konfigurationsdata
 $config = require $baseDir . '/config/config.php';
 
-$db = new Database($config['user'], $config['password'], $config['host'], $config['dbname'], $config['options']);
+$dsn = "mysql:host=" . $config['host'] . ";dbname=" . $config['dbname'] . ";charset=" . $config['charset'];
+$pdo = new PDO($dsn, $config['user'], $config['password'], $config['options']);
+$db = new Database($pdo);
+
+$member = new MemberModel($db);
+$comments = new CommentsModel($db);
+$songs = new SongsModel($db);
+$concerts = new ConcertsModel($db);
 
 // Normalisera url-sökvägar
 $path = function ($uri) {
@@ -29,49 +40,59 @@ $path = function ($uri) {
 };
 
 // Routing
-$controller = new Controller($baseDir);
-$model = new Model($db);
+//$controller = new Controller($baseDir);
+
 switch ($path($_SERVER['REQUEST_URI'])) {
     case '/':
-        $comments = $model->get_comments('comments');
-        $member = $model->get_songs_member('members', 'name','');
-        $count = $model->count('comments');
-        $comment = new \App\Controllers\Controllers($db);
-        $comment->insert_comment('comments');
+        $name = $member->getByValue('Alex Turner');
+        $name = $member->getByValue('Matthew Helders');
+        $name = $member->getByValue('Jamie Cook');
+        $name = $member->getByValue("Nick O'Malley");
+        $comment = $comments->getAll();
         require $baseDir . '/views/index.php';
         break;
-    case '/concert':
-        $concert = $model->get_all('concert');
-        $count = $model->count('concert');
-        require $baseDir . '/views/concert.php';
+    case'/add':
+        $newComment = $comments->create([
+            'name' => $_POST['name'],
+            'comment' => $_POST['comment'],
+        ]);
+        header('Location: /?id=' . $newComment);
         break;
-    case '/admin':
-        $admin = new \App\Controllers\Admin($db);
-        $admin->add_admin('admin');
-        $login = new \App\Controllers\Login($db);
-        require $baseDir . '/views/admin.login.php';
+
+    case '/delete':
+        $delete = $comments->delete($_GET['id']);
+        header('Location: /?id=' . $delete);
         break;
+
     case '/albums':
-        $albums = $model->get_songs_member('songs', 'albums', '');
-        $get_albums = new \App\Controllers\Controllers($db);
+        $name = $songs->getByValue('AM');
+        $name = $songs->getByValue('Suck It and See');
+        $name = $songs->getByValue('Humbug');
+        $name = $songs->getByValue('Favourite worst nightmare');
+        $name = $songs->getByValue('Whatever People Say I Am, That\'s What I\'m Not');
         require $baseDir . '/views/albums.php';
         break;
-    case '/edit':
-        $comments = $model->get_comments('comments');
-        $controller = new \App\Controllers\Controllers($db);
-        $controller->delete('comments');
-        $controller->add_concert('concert');
-        $controller->update_concert('concert');
-        $concert = $model->get_all('concert');
-        $delete = $controller->delete('concert');
-        $controller->insert_comment('comments');
-        $nologin = new App\Controllers\Controllers($db);
-        $login = new \App\Controllers\Login($db);
-        $login->login('admin');
-        $nologin->failed_to_login();
-        $nologin->logout();
-        require $baseDir . '/views/edit.php';
+
+
+    case '/concert':
+        $concert = $concerts->getAll();
+        require $baseDir . '/views/concert.php';
         break;
+
+    case '/update.concert':
+        $concertId = $concerts->getById($_GET['id']);
+        require $baseDir . '/views/update.concert.php';
+        break;
+
+    case '/update':
+        $update = $concerts->update($_POST['id'], [
+            'city' => $_POST['city'],
+            'date' => $_POST['date'],
+        ]);
+        header('Location: concert/?id=' . $_POST['id']);
+        break;
+
+
     default:
         header('HTTP/1.0 404 Not Found');
         echo 'Page not found';
