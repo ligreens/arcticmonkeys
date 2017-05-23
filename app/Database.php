@@ -78,13 +78,4 @@ class Database
         $status = $stm->execute();
         return $status;
     }
-
-    function save($table, $data)
-    {
-        if (isset($data['id'])) {
-            return $this->update($table, $data['id'], $data);
-        } else {
-            return $this->create($table, $data);
-        }
-    }
 }
