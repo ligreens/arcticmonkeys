@@ -43,7 +43,7 @@ h2 {
 .dive {
 
     background-image: url("../images/bild1.png");
-    height: 700px;
+    height: 800px;
 
     background-attachment: fixed;
     background-position: center;
@@ -137,6 +137,11 @@ hr {
 .albumbutton:focus {
     outline: 0;
 }
+.add{
+    background-color:black;
+    color:white;
+    margin-right:2px;
+}
 
 /* End buttons */
 
@@ -217,52 +222,8 @@ hr {
 
 /* End footer */
 
-/* Edit page */
-
-.editcomment {
-    background-color: lightgrey;
-    color: black;
-}
-
-.editcomments {
-    color: black;
-}
-
-.editcommentanme {
-    color: black
-}
-
-.editdate {
-    color: black;
-}
-
-.admincomment {
-    color: red;
-}
-
-.formedit {
-    color: black;
-}
-
-.edit {
-    background-color: ghostwhite;
-}
-
-/* End edit page */
 
 /* Releases page*/
-.album {
-    color: grey;
-    text-align: center;
-}
-
-.cdcover {
-    background-color: black;
-}
-
-.cdcov {
-    background-color: black;
-}
 
 .songslist {
     margin-top: 50px;
@@ -280,47 +241,39 @@ hr {
     font-weight: bold;
 }
 
-#homealbums {
-    background-color: black;
-}
 
-.songlist {
-    color: white;
-    font-size: 12px;
-    line-height: 0.9;
-    display: none;
-
-}
 .albumheadings {
     margin-top: 17px;
-    font-size: 30px;
+    font-size: 13px;
+    margin-bottom:-33px;
+    color:white;
 }
 
-.cd {
-    text-decoration: underline;
-}
+
 
 .songs {
     border-top: 1px solid grey;
     margin-left: 15px;
     margin-top: 20px;
+    color:white;
+
 
 }
 
-.suck {
-    width: 200px;
-}
 
 .albums {
     background-color: black;
 }
+
 .releases {
     font-size: 25px;
     color: white;
     font-weight: bold;
     margin-top: 10px;
 }
-
+.single{
+    margin-bottom:50px;
+}
 /* End releases page*/
 
 /* Concert page*/
@@ -359,10 +312,6 @@ hr {
 
 .first {
     margin-bottom: 250px;
-}
-
-.am {
-    border: 1px solid dimgrey;
 }
 
 .second {

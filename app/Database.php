@@ -22,15 +22,6 @@ class Database
         return ($success) ? $row : [];
     }
 
-
-    public function getByValue($table, $column, $value)
-    {
-        $sql = "SELECT * FROM " . $table . " WHERE " . $column . " = :value";
-        $stm = $this->pdo->prepare($sql);
-        $stm->execute([':value' => $value]);
-        return $stm->fetchAll();
-    }
-
     public function getAll($table)
     {
         $stm = $this->pdo->prepare('SELECT * FROM ' . $table );

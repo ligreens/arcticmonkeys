@@ -1,39 +1,7 @@
-<?php require 'header.php'?>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dive">
-<main class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main" style="padding: 0;">
-        <form action="#" method="POST" name="member">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <img src="images/img/alex.jpg"
-                     class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12 alex">
-
-                <?php foreach ($name as $value) { ?>
-                    <h4><?= $value['name']?>,   <?= $value  ['instruments'] ?></h4>
-                <?php } ?>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 matt">
-               <img src="images/img/matt.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                <?php foreach ($name as $value) { ?>
-                    <h4><?= $value['name']?>,  <?= $value['instruments'] ?></h4><?php } ?>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <img src="images/img/jamie.jpg"
-                     class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                <?php foreach ($name as $value) { ?>
-                    <h4><?= $value['name']?>,  <?= $value['instruments'] ?></h4><?php } ?>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                <img src="images/img/nick.jpg" class="img-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                <?php foreach ($name as $value) { ?>
-                    <h4><?= $value['name']?>,  <?= $value['instruments'] ?></h4><?php } ?>
-            </div>
-        </form>
-    </main>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment" style="padding: 0;">
+<?php require 'header.php' ?>
+<main>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dive " style="padding:0;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding: 0;">
         <p class=" addcomment">FAN AREA</p>
         <div>
             <form action="/add" method="POST" class="form-inline fans" id="fans">
@@ -46,12 +14,8 @@
                 <button type="submit" name="send" class="btn btn-primary send">COMMENT</button>
             </form>
             <br>
-            <div class="bordercomments col-lg-12 col-md-12 col-sm-12 col-xs-12 fans" style=" margin:0px; " >
+            <div class="bordercomments col-lg-12 col-md-12 col-sm-12 col-xs-12 fans" style=" margin:0px; ">
                 <div class="col-lg-9 col-md-9">
-                  <!--  <?php /*$count = $model->count('comments'); */?>
-                    <?php /*foreach ($count as $item) { */?>
-                        <p class="fieldcomment">COMMENTS(<?/*= $item['total'] */?>)</p>
-                    <?php /*} */?> -->
                     <p class="fieldcomment">COMMENTS</p>
                     <?php foreach ($comment as $value) { ?>
                         <div class="second">
@@ -59,14 +23,14 @@
                             <h6 id='date' class=""><?= $value['date'] ?>
                             </h6>
                             <p class='comments'><?= $value['comment'] ?></p><br>
-                            <a class="delete btn btn-primary" href="/delete?id=<?= $value['id'] ?>">Delete</a>
+
                         </div>
-                   <?php } ?>
+                    <?php } ?>
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
             </div>
         </div>
     </div>
 </div>
-<?php require 'footer.php'?>
+<?php require 'footer.php' ?>
 

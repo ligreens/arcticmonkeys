@@ -9,7 +9,6 @@ abstract class Model
     protected $id;
     private $db;
     protected $table = '';
-    protected $column = '';
 
     public function __construct(Database $db, $modelData = [])
     {
@@ -20,11 +19,6 @@ abstract class Model
 
     public function getById($id) {
         return $this->db->getById($this->table, $id);
-    }
-
-    public function getByValue($value)
-    {
-        return $this->db->getByValue($this->table, $this->column, $value);
     }
 
     public function getAll()

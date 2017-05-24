@@ -4,17 +4,17 @@ use App\Database;
 
 use App\Models\CommentsModel;
 use App\Models\ConcertsModel;
-use App\Models\MemberModel;
-use App\Models\SongsModel;
+use App\Models\SinglesModel;
+use App\Models\AlbumsModel;
 
 $baseDir = __DIR__ . '/..';
 
 require $baseDir . '/app/database.php';
 require $baseDir . '/app/Models/model.php';
-require $baseDir . '/app/Models/MemberModel.php';
 require $baseDir . '/app/Models/CommentsModel.php';
-require $baseDir . '/app/Models/SongsModel.php';
+require $baseDir . '/app/Models/AlbumsModel.php';
 require $baseDir . '/app/Models/ConcertsModel.php';
+require $baseDir . '/app/Models/SinglesModel.php';
 
 // Ladda in Composers autoload-fil
 require '../vendor/autoload.php';
@@ -26,9 +26,9 @@ $dsn = "mysql:host=" . $config['host'] . ";dbname=" . $config['dbname'] . ";char
 $pdo = new PDO($dsn, $config['user'], $config['password'], $config['options']);
 $db = new Database($pdo);
 
-$member = new MemberModel($db);
 $comments = new CommentsModel($db);
-$songs = new SongsModel($db);
+$songs = new AlbumsModel($db);
+$singles = new SinglesModel($db);
 $concerts = new ConcertsModel($db);
 
 // Normalisera url-sökvägar
@@ -44,10 +44,6 @@ $path = function ($uri) {
 
 switch ($path($_SERVER['REQUEST_URI'])) {
     case '/':
-        $name = $member->getByValue('Alex Turner');
-        $name = $member->getByValue('Matthew Helders');
-        $name = $member->getByValue('Jamie Cook');
-        $name = $member->getByValue("Nick O'Malley");
         $comment = $comments->getAll();
         require $baseDir . '/views/index.php';
         break;
@@ -59,24 +55,31 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         header('Location: /?id=' . $newComment);
         break;
 
-    case '/delete':
-        $delete = $comments->delete($_GET['id']);
-        header('Location: /?id=' . $delete);
-        break;
-
     case '/albums':
-        $name = $songs->getByValue('AM');
-        $name = $songs->getByValue('Suck It and See');
-        $name = $songs->getByValue('Humbug');
-        $name = $songs->getByValue('Favourite worst nightmare');
-        $name = $songs->getByValue('Whatever People Say I Am, That\'s What I\'m Not');
+        $album = $songs->getAll();
+        $single = $singles->getAll();
         require $baseDir . '/views/albums.php';
         break;
-
 
     case '/concert':
         $concert = $concerts->getAll();
         require $baseDir . '/views/concert.php';
+        break;
+
+    case'/add.concert':
+        require $baseDir . '/views/add.concert.php';
+        break;
+    case'/create':
+        $newConcert = $concerts->create([
+            'city' => $_POST['city'],
+            'date' => $_POST['date'],
+        ]);
+        header('Location: /concert/?id=' . $newConcert);
+        break;
+
+    case '/delete':
+        $delete = $concerts->delete($_GET['id']);
+        header('Location: concert/?id=' . $delete);
         break;
 
     case '/update.concert':
@@ -91,7 +94,6 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         ]);
         header('Location: concert/?id=' . $_POST['id']);
         break;
-
 
     default:
         header('HTTP/1.0 404 Not Found');
