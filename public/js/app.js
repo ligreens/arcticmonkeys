@@ -1,3 +1,7 @@
-/**
- * Created by marcusdalgren on 2017-04-25.
- */
+$("body").on("load", function(){
+    console.log("Body loaded");
+});
+
+$(document).ready(function(){
+    $(".second:nth-child(even)").css("background-color", "#333333");
+});

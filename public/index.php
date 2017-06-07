@@ -1,11 +1,12 @@
 <?php
 use App\Controllers\Controller;
 use App\Database;
-
+use App\Models\CityModel;
 use App\Models\CommentsModel;
 use App\Models\ConcertsModel;
 use App\Models\SinglesModel;
 use App\Models\AlbumsModel;
+
 
 $baseDir = __DIR__ . '/..';
 
@@ -15,6 +16,7 @@ require $baseDir . '/app/Models/CommentsModel.php';
 require $baseDir . '/app/Models/AlbumsModel.php';
 require $baseDir . '/app/Models/ConcertsModel.php';
 require $baseDir . '/app/Models/SinglesModel.php';
+require $baseDir . '/app/Models/CityModel.php';
 
 // Ladda in Composers autoload-fil
 require '../vendor/autoload.php';
@@ -30,6 +32,7 @@ $comments = new CommentsModel($db);
 $songs = new AlbumsModel($db);
 $singles = new SinglesModel($db);
 $concerts = new ConcertsModel($db);
+$city = new CityModel($db);
 
 // Normalisera url-sökvägar
 $path = function ($uri) {
@@ -62,16 +65,24 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         break;
 
     case '/concert':
+        $concertData = [];
         $concert = $concerts->getAll();
+        foreach ($concert as $item) {
+            $concertData[] = [
+                'concert' => $item,
+                'city' => $city->getById($item['city_id'])
+            ];
+        }
         require $baseDir . '/views/concert.php';
         break;
 
     case'/add.concert':
+        $cities = $city->getAll();
         require $baseDir . '/views/add.concert.php';
         break;
     case'/create':
         $newConcert = $concerts->create([
-            'city' => $_POST['city'],
+            'city_id' => $_POST['cities'],
             'date' => $_POST['date'],
         ]);
         header('Location: /concert/?id=' . $newConcert);
@@ -83,13 +94,14 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         break;
 
     case '/update.concert':
+        $cities = $city->getAll();
         $concertId = $concerts->getById($_GET['id']);
         require $baseDir . '/views/update.concert.php';
         break;
 
     case '/update':
         $update = $concerts->update($_POST['id'], [
-            'city' => $_POST['city'],
+            'city_id' => $_POST['cities'],
             'date' => $_POST['date'],
         ]);
         header('Location: concert/?id=' . $_POST['id']);

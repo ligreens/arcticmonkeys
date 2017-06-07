@@ -15,7 +15,7 @@ class Database
 
     public function getById($table, $id)
     {
-        $stm = $this->pdo->prepare('SELECT * FROM '.$table.' WHERE id = :id');
+        $stm = $this->pdo->prepare('SELECT * FROM ' . $table . ' WHERE id = :id');
         $stm->bindValue(':id', $id);
         $success = $stm->execute();
         $row = $stm->fetch(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@ class Database
 
     public function getAll($table)
     {
-        $stm = $this->pdo->prepare('SELECT * FROM ' . $table );
+        $stm = $this->pdo->prepare('SELECT * FROM ' . $table);
         $stm->bindParam(':id', $id);
         $success = $stm->execute();
         $row = $stm->fetchAll(PDO::FETCH_ASSOC);

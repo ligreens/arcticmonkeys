@@ -137,10 +137,11 @@ hr {
 .albumbutton:focus {
     outline: 0;
 }
-.add{
-    background-color:black;
-    color:white;
-    margin-right:2px;
+
+.add {
+    background-color: black;
+    color: white;
+    margin-right: 2px;
 }
 
 /* End buttons */
@@ -222,7 +223,6 @@ hr {
 
 /* End footer */
 
-
 /* Releases page*/
 
 .songslist {
@@ -241,25 +241,20 @@ hr {
     font-weight: bold;
 }
 
-
 .albumheadings {
     margin-top: 17px;
     font-size: 13px;
-    margin-bottom:-33px;
-    color:white;
+    margin-bottom: -33px;
+    color: white;
 }
-
-
 
 .songs {
     border-top: 1px solid grey;
     margin-left: 15px;
     margin-top: 20px;
-    color:white;
-
+    color: white;
 
 }
-
 
 .albums {
     background-color: black;
@@ -271,9 +266,11 @@ hr {
     font-weight: bold;
     margin-top: 10px;
 }
-.single{
-    margin-bottom:50px;
+
+.single {
+    margin-bottom: 50px;
 }
+
 /* End releases page*/
 
 /* Concert page*/
@@ -298,6 +295,7 @@ hr {
 #concert {
     padding-bottom: 25px;
 }
+
 .info {
     margin-top: 10px;
     background-color: #eee8d8;
