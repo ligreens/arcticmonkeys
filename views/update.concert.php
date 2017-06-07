@@ -6,7 +6,7 @@
         <select name="cities">
             <?php
             foreach ($cities as $value) { ?>
-                <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+                <option value="<?= $value['id'] ?>" <?php if ($value['id'] == $_GET['city_id']) { ?> selected="selected"<?php } ?>><?= $value['name'] ?></option>
                 <?php
             } ?>
         </select>

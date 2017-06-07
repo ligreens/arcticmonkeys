@@ -9,11 +9,11 @@
         <img src="images/concert.jpg" class="col-lg-2 col-md-2 col-sm-2 col-xs-12 img-responsive">
 
         <a class="add  btn btn-primary pull-right"
-           href="/update.concert?id=<?= $value['concert']['id'] ?> ,<?= $value['city']['id'] ?>"
+           href="/update.concert?id=<?= $value['concert']['id'] ?>&city_id=<?= $value['city']['id'] ?>"
            role='button'>Update</a>
         <a class="add  btn btn-primary pull-right deletebtn" href="/delete?id=<?= $value['concert']['id'] ?>">Delete</a>
         <p class="concertlist col-lg-10 col-md-10 col-sm-10 col-xs-12"><?= $value['concert']['date'] ?>
-            , <?= $value['city']['name'] ?>
+            ,  <?= $value['city']['name'] ?>
         <p>
             <?php } ?>
     </div>
