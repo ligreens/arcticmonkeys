@@ -88,6 +88,19 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         header('Location: /concert/?id=' . $newConcert);
         break;
 
+        case '/add.city':
+        $cities = $city->create([
+            'name' => $_POST['name'],
+            'country' => $_POST['country']
+        ]);
+        header('Location: add.concert/?id=' . $cities);
+        break;
+
+    case '/delete.city':
+        $cities = $city->delete($_GET['id']);
+        header('Location: add.concert/');
+        break;
+
     case '/delete':
         $delete = $concerts->delete($_GET['id']);
         header('Location: concert/?id=' . $delete);
