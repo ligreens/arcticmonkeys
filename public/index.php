@@ -88,7 +88,7 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         header('Location: /concert/?id=' . $newConcert);
         break;
 
-        case '/add.city':
+    case '/add.city':
         $cities = $city->create([
             'name' => $_POST['name'],
             'country' => $_POST['country']
@@ -96,10 +96,25 @@ switch ($path($_SERVER['REQUEST_URI'])) {
         header('Location: add.concert/?id=' . $cities);
         break;
 
+    case '/update.city':
+        $cities = $city->getAll();
+        $cityId = $city->getById($_GET['id']);
+        require $baseDir . '/views/update.city.php';
+        break;
+
+    case '/updateCity':
+        $updateCity = $city->update($_POST['id'], [
+            'name' => $_POST['name'],
+            'country' => $_POST['country'],
+        ]);
+        header('Location: add.concert/?id=' . $_POST['id']);
+        break;
+
     case '/delete.city':
         $cities = $city->delete($_GET['id']);
-        header('Location: add.concert/');
+        header('Location: add.concert/?id=' . $cities);
         break;
+
 
     case '/delete':
         $delete = $concerts->delete($_GET['id']);

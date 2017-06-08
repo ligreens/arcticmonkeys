@@ -29,18 +29,32 @@
         <button type="submit" name="update" class=" delete btn btn-primary">Add
         </button>
     </form>
-    <form action="/delete.city" method="POST" class="form-inline" >
-    <select name="cities">
+<h2>Update city</h2>
+<form action="/" method="POST" class="form-inline" >
+
+    <?php
+    foreach ($cities as $value) { ?>
+        <p>  <?= $value['name'] ?>
+        <a class="add  btn btn-primary pull-right deletebtn" href="/update.city?id=<?= $value['id'] ?><?= $value['name'] ?>"  role="button">Update</a>
+        </p>
+            <?php
+    } ?>
+</form>
+
+
+<h2>Delete city</h2>
+    <form action="/" method="POST" class="form-inline" >
+
         <?php
         foreach ($cities as $value) { ?>
-            <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+<p><?= $value['name'] ?>
+
+        <a class="add  btn btn-primary pull-right deletebtn" href="/delete.city?id=<?= $value['id'] ?><?= $value['name'] ?>" role="button">Delete</a>
+</p>
             <?php
         } ?>
-    </select>
-        <a class="add  btn btn-primary pull-right deletebtn" href="/delete.city?id=<?= $value['id'] ?>" role="button">Delete</a>
+
     </form>
-
-
 
 
 
