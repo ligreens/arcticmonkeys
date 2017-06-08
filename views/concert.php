@@ -13,7 +13,7 @@
            role='button'>Update</a>
         <a class="add  btn btn-primary pull-right deletebtn" href="/delete?id=<?= $value['concert']['id'] ?>">Delete</a>
         <p class="concertlist col-lg-10 col-md-10 col-sm-10 col-xs-12"><?= $value['concert']['date'] ?>
-            ,  <?= $value['city']['name'] ?>
+            -  <?= $value['city']['name'] ?>
         <p>
             <?php } ?>
     </div>
